@@ -1,0 +1,44 @@
+description: ''
+handle: bloggers
+name: bloggers
+permissions:
+  - accesssitewhensystemisoff
+  - accesscpwhensystemisoff
+  - performupdates
+  - accesscp
+  - customizesources
+  - registerusers
+  - moderateusers
+  - assignuserpermissions
+  - assignusergroups
+  - administrateusers
+  - impersonateusers
+  - editusers
+  - deleteusers
+  - 'createentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'publishentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'deleteentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'publishpeerentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'deletepeerentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'editpeerentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'publishpeerentrydrafts:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'deletepeerentrydrafts:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'editpeerentrydrafts:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'editentries:44c2f1be-4e60-4d0f-814b-50daa6e38386'
+  - 'publishentries:6f1f51c7-d1f2-45be-90d0-403ba0826050'
+  - 'publishpeerentrydrafts:6f1f51c7-d1f2-45be-90d0-403ba0826050'
+  - 'deletepeerentrydrafts:6f1f51c7-d1f2-45be-90d0-403ba0826050'
+  - 'editpeerentrydrafts:6f1f51c7-d1f2-45be-90d0-403ba0826050'
+  - 'editentries:6f1f51c7-d1f2-45be-90d0-403ba0826050'
+  - 'editglobalset:eca81b0b-eed2-47ab-9dee-b089c8d73e26'
+  - 'saveassetinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'createfoldersinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'deletefilesandfoldersinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'replacefilesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'editimagesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'editpeerfilesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'replacepeerfilesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'deletepeerfilesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'editpeerimagesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'viewpeerfilesinvolume:60c29eeb-2175-462e-9517-e857a5b04145'
+  - 'viewvolume:60c29eeb-2175-462e-9517-e857a5b04145'

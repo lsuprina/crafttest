@@ -1,17 +1,11 @@
-dateModified: 1598965984
+dateModified: 1598970088
 email:
   fromEmail: lsuprina@foi.hr
   fromName: craft_test
   transportType: craft\mail\transportadapters\Sendmail
 system:
-  edition: solo
+  edition: pro
   live: true
   name: craft_test
   schemaVersion: 3.5.13
   timeZone: America/Los_Angeles
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true

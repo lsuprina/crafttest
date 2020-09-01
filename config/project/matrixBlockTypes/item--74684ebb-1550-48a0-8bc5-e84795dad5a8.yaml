@@ -1,0 +1,89 @@
+field: 7e0cbfd5-23cc-42e0-9ae9-338c7c7d3298
+fieldLayouts:
+  a68f4095-3264-4d8f-b6b8-57a65ff29860:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a78a3e79-8b2e-4108-aef0-4a2bd7003adb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 79e4dbfa-b8c7-4f85-a703-282c86fac38b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  79e4dbfa-b8c7-4f85-a703-282c86fac38b:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: socialNetworkUrl
+    instructions: ''
+    name: social_network_url
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  a78a3e79-8b2e-4108-aef0-4a2bd7003adb:
+    contentColumnType: string
+    fieldGroup: null
+    handle: socialIcon
+    instructions: ''
+    name: social_icon
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Facebook
+            -
+              - value
+              - 'fab fa-facebook-f'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Twitter
+            -
+              - value
+              - 'fab fa-twitter'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Google plus'
+            -
+              - value
+              - 'fab fa-google-plus-g'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: item
+name: item
+sortOrder: 1
