@@ -1,5 +1,5 @@
 fieldLayouts:
-  3345016e-819a-4f94-bf22-43735237bdb4:
+  8cc3e150-7eda-4df7-8c8b-a888b59a70dc:
     tabs:
       -
         elements:
@@ -28,6 +28,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 2355d39d-47da-4e82-b50a-e099208d5eee
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: c3912c0d-5273-4027-8ea7-74c0ca7ec838
             instructions: null
             label: null
@@ -46,7 +55,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2355d39d-47da-4e82-b50a-e099208d5eee
+            fieldUid: 5f1aae22-caf5-4f32-9f29-2d98911d9794
             instructions: null
             label: null
             required: false
@@ -56,33 +65,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-      -
-        elements:
-          -
-            fieldUid: f89026c3-1280-4673-aa46-a6089c9880fd
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 0bf25ffc-24f2-4784-b9c8-bba770796201
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Tab 2'
-        sortOrder: 2
-handle: intro
-hasTitleField: true
-name: intro
-section: 6f1f51c7-d1f2-45be-90d0-403ba0826050
+handle: featuredPosts
+hasTitleField: false
+name: featured_posts
+section: 781e79e2-1775-447f-ba58-7f23eb2b6cd7
 sortOrder: 1
-titleFormat: null
+titleFormat: 'featured posts'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -81,6 +81,28 @@ fields:
             -
               - default
               - ''
+        -
+          __assoc__:
+            -
+              - label
+              - LinkedIn
+            -
+              - value
+              - 'fab fa-linkedin-in'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Instagram
+            -
+              - value
+              - 'fab fa-instagram'
+            -
+              - default
+              - ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown

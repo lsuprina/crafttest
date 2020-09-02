@@ -1,0 +1,36 @@
+<!-- Title -->
+        {% set instagram_profile = craft.entries().section('instagram').one() %}
+          <hr>
+          <p class="font-weight-bold dark-grey-text text-center spacing">
+            <strong>{{instagram_profile.title|upper}}</strong>
+          </p>
+          <hr>
+
+        {% set images = instagram_profile.image.all() %}
+          <!-- Instagram -->
+          <section class="my-4">
+
+            <div class="row">
+              <div class="col-md-12">
+
+                <div id="mdb-lightbox-ui"></div>
+
+                <div class="mdb-lightbox">
+
+                {% for image in images %}
+                    <figure class="col-md-6">
+                    <a href="{{image.url}}" data-size="1600x1600">
+                      <img src="{{image.url}}" class="img-fluid">
+                    </a>
+                  </figure>
+                {% endfor %}
+                  
+                </div>
+
+              </div>
+
+            </div>
+            <!-- Grid row -->
+
+          </section>
+          <!-- Instagram -->

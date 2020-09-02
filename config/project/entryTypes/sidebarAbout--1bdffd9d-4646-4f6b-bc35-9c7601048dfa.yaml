@@ -1,5 +1,5 @@
 fieldLayouts:
-  3345016e-819a-4f94-bf22-43735237bdb4:
+  f87b14ed-4d3b-41fb-b3c1-322a8aa2f63f:
     tabs:
       -
         elements:
@@ -37,7 +37,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6df19862-1703-4ac0-885f-3243d0e836ba
+            fieldUid: 2355d39d-47da-4e82-b50a-e099208d5eee
             instructions: null
             label: null
             required: false
@@ -46,7 +46,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2355d39d-47da-4e82-b50a-e099208d5eee
+            fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7e0cbfd5-23cc-42e0-9ae9-338c7c7d3298
             instructions: null
             label: null
             required: false
@@ -56,32 +65,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-      -
-        elements:
-          -
-            fieldUid: f89026c3-1280-4673-aa46-a6089c9880fd
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 0bf25ffc-24f2-4784-b9c8-bba770796201
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Tab 2'
-        sortOrder: 2
-handle: intro
+handle: sidebarAbout
 hasTitleField: true
-name: intro
-section: 6f1f51c7-d1f2-45be-90d0-403ba0826050
+name: sidebar_about
+section: 20b927ff-f6f1-4b62-8987-d84c6ac99826
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

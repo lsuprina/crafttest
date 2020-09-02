@@ -1,5 +1,5 @@
 fieldLayouts:
-  3345016e-819a-4f94-bf22-43735237bdb4:
+  4fd5e9a0-89a8-4e4d-b774-cc48f18240e1:
     tabs:
       -
         elements:
@@ -28,25 +28,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: ac424705-3ce0-4ab0-ab01-08dfb755540a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: c3912c0d-5273-4027-8ea7-74c0ca7ec838
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 6df19862-1703-4ac0-885f-3243d0e836ba
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 2355d39d-47da-4e82-b50a-e099208d5eee
             instructions: null
             label: null
             required: false
@@ -56,32 +47,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-      -
-        elements:
-          -
-            fieldUid: f89026c3-1280-4673-aa46-a6089c9880fd
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 0bf25ffc-24f2-4784-b9c8-bba770796201
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Tab 2'
-        sortOrder: 2
-handle: intro
+handle: newsletter
 hasTitleField: true
-name: intro
-section: 6f1f51c7-d1f2-45be-90d0-403ba0826050
+name: newsletter
+section: 3d039701-753a-484e-9e3b-d0feb331b4d6
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

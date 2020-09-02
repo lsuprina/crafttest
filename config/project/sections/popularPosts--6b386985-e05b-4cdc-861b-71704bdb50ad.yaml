@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: popularPosts
+name: popular_posts
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  0c2d02e9-1d1e-4615-a309-ed793efd7840:
+    enabledByDefault: true
+    hasUrls: true
+    template: segment\popularPosts
+    uriFormat: 'popular-posts/{slug}'
+type: channel

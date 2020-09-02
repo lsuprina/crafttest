@@ -1,4 +1,5 @@
 <footer class="page-footer stylish-color-dark text-center text-md-left mt-4 pt-4">
+{% set social_links = craft.entries().section('footer').all() %}
 
     <!-- Footer Links -->
     <div class="container">
@@ -96,26 +97,14 @@
           <!-- Social buttons -->
           <div class="social-section text-center text-md-left">
             <ul class="list-unstyled list-inline">
+
+            {% for item in social_links.socialLinks.all() %}
               <li class="list-inline-item mx-0">
-                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
-                  <i class="fab fa-facebook-f"></i>
+                <a href="{{item.socialNetworkUrl}}">
+                  <i class="{{item.socialIcon.value}}"></i>
                 </a>
               </li>
-              <li class="list-inline-item mx-0">
-                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mx-0">
-                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
-                  <i class="fab fa-google-plus-g"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mx-0">
-                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
+            {% endfor %}
             </ul>
           </div>
           <!-- Social buttons -->

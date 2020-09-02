@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
+handle: bloggerUsername
+instructions: ''
+name: blogger_username
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
