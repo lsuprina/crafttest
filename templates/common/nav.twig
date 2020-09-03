@@ -1,5 +1,5 @@
 <header>
-
+  {% set user = craft.users().group('bloggers').one() %}
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar white">
       <div class="container-fluid justify-content-center align-items-center">
@@ -54,26 +54,16 @@
         </div>
 
         <ul class="navbar-nav ml-auto nav-flex-icons">
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-google-plus-g"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
+
+          {% for item in user.socialLinks.all() %}
+            <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" href="{{item.socialNetworkUrl}}" target="_blank">
+                <i class="{{item.socialIcon.value}}"></i>
+              </a>
+            </li>
+          {% endfor %}
+
+        </ul>
 
       </div>
 

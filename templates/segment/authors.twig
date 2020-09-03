@@ -1,0 +1,33 @@
+<!-- Author -->
+  <section class="mb-4">
+
+  {% set user = craft.users().group('bloggers').one() %}
+  <hr class="mt-4">
+    <p class="font-weight-bold dark-grey-text text-center spacing">
+      <strong>{{user.heading|upper}}</strong>
+    </p>
+  <hr>
+  
+  
+    <!-- Avatar -->
+    <div class="flex-center mt-4">
+      <img src="{{user.photo.url}}" class="img-fluid img-author z-depth-1">
+    </div>
+
+    <!-- Description -->
+    <p class="mt-3 dark-grey-text font-small text-center">
+      <em>{{user.text}}</em>
+    </p>
+
+    <ul class="list-unstyled circle-icons flex-center">
+    {% for item in user.socialLinks.all() %}
+      <li>
+        <a href="{{item.socialNetworkUrl}}" target="_blank">
+          <i class="{{item.socialIcon.value}}"> </i>
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+
+  </section>
+  <!-- Author -->

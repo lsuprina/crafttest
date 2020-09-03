@@ -1,11 +1,11 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: socialLinks
+handle: contact
 instructions: ''
-name: 'Social links'
+name: Contact
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_sociallinks}}'
+  contentTable: '{{%matrixcontent_contact}}'
   maxBlocks: ''
   minBlocks: ''
   propagationMethod: all

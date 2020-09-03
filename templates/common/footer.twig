@@ -1,5 +1,5 @@
 <footer class="page-footer stylish-color-dark text-center text-md-left mt-4 pt-4">
-{% set social_links = craft.entries().section('footer').all() %}
+{% set user = craft.users().group('bloggers').one() %}
 
     <!-- Footer Links -->
     <div class="container">
@@ -60,14 +60,13 @@
         <!-- Fourth column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-          <p>
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-          <p>
-            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-          <p>
-            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+          {% for item in user.contact.all() %}
+            <p>
+              <i class="{{item.contactIcon}}"></i>{{item.contactInput}}</p>
+            <p>
+          {% endfor %}
+
         </div>
         <!-- Fourth column -->
 
@@ -98,9 +97,9 @@
           <div class="social-section text-center text-md-left">
             <ul class="list-unstyled list-inline">
 
-            {% for item in social_links.socialLinks.all() %}
+            {% for item in user.socialLinks.all() %}
               <li class="list-inline-item mx-0">
-                <a href="{{item.socialNetworkUrl}}">
+                <a href="{{item.socialNetworkUrl}}" class="btn-floating btn-sm rgba-white-slight mr-xl-4" target="_blank">
                   <i class="{{item.socialIcon.value}}"></i>
                 </a>
               </li>

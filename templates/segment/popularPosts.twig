@@ -1,46 +1,44 @@
-<!-- Title -->
-        {% set pop_post_title = craft.entries().section('popularPosts').one() %}
-        <hr>
-          <p class="font-weight-bold dark-grey-text text-center spacing">
-            <strong>{{pop_post_title.title|upper}}</strong>
+<hr>
+  <p class="font-weight-bold dark-grey-text text-center spacing">
+    <strong>POPULAR POSTS</strong>
+  </p>
+<hr>
+
+{% set popularPosts = craft.entries().section('article').all() %}
+
+<!-- Popular posts -->
+<section class="mb-5">
+  <!-- Grid row -->
+  <div class="row mt-4">
+    <!-- Grid column -->
+    <div class="col-md-6 col-lg-12">
+
+    {% for popularPost in popularPosts|sort((a,b) => b.comment|length <=> a.comment|length)|slice(0,2) %}
+
+        <!-- Image -->
+        <div class="view overlay z-depth-1">
+          <img src="{{popularPost.image.one().url}}"
+            class="img-fluid" alt="Post">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Post data -->
+        <div class="text-center mt-3">
+          <p class="mb-1 font-weight-bold">
+            <a href="#!" class="text-hover">{{popularPost.heading}}</a>
           </p>
-        <hr>
+          <p class="font-small grey-text">
+            <em>{{popularPost.postDate|date('M d, Y')}}</em>
+          </p>
 
-        {% set popular_posts = craft.entries().section('popularPosts').all() %}
-          
-        <!-- Popular posts -->
-        <section class="mb-5">
-          <!-- Grid row -->
-          <div class="row mt-4">
-            <!-- Grid column -->
-            <div class="col-md-6 col-lg-12">
-
-            {% for popular_post in popular_posts %}
-
-                <!-- Image -->
-                <div class="view overlay z-depth-1">
-                  <img src="{{popular_post.image.one().url}}"
-                    class="img-fluid" alt="Post">
-                  <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
-                </div>
-
-                <!-- Post data -->
-                <div class="text-center mt-3">
-                  <p class="mb-1 font-weight-bold">
-                    <a href="#!" class="text-hover">{{popular_post.heading}}</a>
-                  </p>
-                  <p class="font-small grey-text">
-                    <em>{{popular_post.postDate|date('M d, Y')}}</em>
-                  </p>
-
-                </div>
-              
-            {% endfor %}
-            </div>
-            <!-- Grid column -->
-          </div>
-          <!-- Grid row -->
-        </section>
-         <!-- Popular posts -->
+        </div>
+      
+    {% endfor %}
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
+</section>
+  <!-- Popular posts -->

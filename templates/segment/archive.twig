@@ -1,36 +1,37 @@
 <!-- Title -->
-        {% set archive = craft.entries().section('archive').one() %}
-          <hr>
-          <p class="font-weight-bold dark-grey-text text-center spacing">
-            <strong>{{archive.title|upper}}</strong>
-          </p>
-          <hr>
-        {% set archive = craft.entries().section('archive').all() %}
-        
-          <!-- Archive -->
-          <section class="archive mb-5">
 
-            <!-- Grid row -->
-            <div class="row">
+<hr>
+<p class="font-weight-bold dark-grey-text text-center spacing">
+  <strong>ARCHIVE</strong>
+</p>
+<hr>
 
-              <!-- Grid column -->
-              <div class="col-md-12 text-center">
+{% set articles = craft.entries().section('article').all() %}       
 
-                <!-- List -->
-                <ul class="list-unstyled mt-3">
-                {% for period in archive %}
-                  <li>
-                    <h6 class="font-weight-normal">
-                      <a href="#!" class="dark-grey-text">{{period.archiveDate|date('M Y')}}</a>
-                    </h6>
-                  </li>
-                {% endfor %}
+<!-- Archive -->
+<section class="archive mb-5">
 
-              </div>
-              <!-- Grid column -->
+  <!-- Grid row -->
+  <div class="row">
 
-            </div>
-            <!-- Grid row -->
+    <!-- Grid column -->
+    <div class="col-md-12 text-center">
 
-          </section>
-          <!-- Archive -->
+      <!-- List -->
+      <ul class="list-unstyled mt-3">
+      {% for article in articles %}
+        <li>
+          <h6 class="font-weight-normal">
+            <a href="#!" class="dark-grey-text">{{article.postDate|date('M Y')}}</a>
+          </h6>
+        </li>
+      {% endfor %}
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Archive -->

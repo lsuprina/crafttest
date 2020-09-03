@@ -1,5 +1,5 @@
 fieldLayouts:
-  4fd5e9a0-89a8-4e4d-b774-cc48f18240e1:
+  25b3d0a8-7c85-4879-9246-4b629b3cdc91:
     tabs:
       -
         elements:
@@ -28,16 +28,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ac424705-3ce0-4ab0-ab01-08dfb755540a
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: c3912c0d-5273-4027-8ea7-74c0ca7ec838
+            fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
             instructions: null
             label: null
             required: false
@@ -47,10 +38,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: newsletter
+handle: comments
 hasTitleField: true
-name: newsletter
-section: 3d039701-753a-484e-9e3b-d0feb331b4d6
+name: comments
+section: d20cdcac-ad5b-476f-873a-d5dce6699c1c
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

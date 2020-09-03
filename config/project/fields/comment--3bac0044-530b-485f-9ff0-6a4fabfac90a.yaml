@@ -1,9 +1,9 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: bloggerUsername
+handle: comment
 instructions: ''
-name: 'Blogger username'
-searchable: true
+name: Comment
+searchable: false
 settings:
   allowSelfRelations: false
   limit: ''
@@ -11,10 +11,11 @@ settings:
   selectionLabel: ''
   showSiteMenu: true
   source: null
-  sources: '*'
+  sources:
+    - 'section:d20cdcac-ad5b-476f-873a-d5dce6699c1c'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site
-type: craft\fields\Users
+type: craft\fields\Entries

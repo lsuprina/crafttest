@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: sidebarAbout
-name: sidebar_about
+handle: comments
+name: comments
 previewTargets:
   -
     __assoc__:
@@ -9,7 +9,7 @@ previewTargets:
         - 'Primary entry page'
       -
         - urlFormat
-        - ''
+        - '{url}'
       -
         - refresh
         - '1'
@@ -18,6 +18,6 @@ siteSettings:
   0c2d02e9-1d1e-4615-a309-ed793efd7840:
     enabledByDefault: true
     hasUrls: true
-    template: segment/sidebarAbout.twig
-    uriFormat: 'sidebar-about/{slug}'
+    template: null
+    uriFormat: 'comments/{slug}'
 type: channel

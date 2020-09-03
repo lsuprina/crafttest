@@ -2,7 +2,7 @@ contentColumnType: text
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
 handle: readMore
 instructions: ''
-name: read_more
+name: 'Read more'
 searchable: false
 settings:
   byteLimit: null

@@ -1,8 +1,17 @@
-dateModified: 1599055323
+dateModified: 1599141943
 email:
   fromEmail: lsuprina@foi.hr
   fromName: craft_test
   transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  cheat-sheet:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: pro
   live: true

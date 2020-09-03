@@ -1,11 +1,11 @@
-field: 7e0cbfd5-23cc-42e0-9ae9-338c7c7d3298
+field: f9662815-850c-43a1-8dbc-a0049bab76f8
 fieldLayouts:
-  a68f4095-3264-4d8f-b6b8-57a65ff29860:
+  763af57a-1b8b-44b3-a6c0-466d46d9266b:
     tabs:
       -
         elements:
           -
-            fieldUid: a78a3e79-8b2e-4108-aef0-4a2bd7003adb
+            fieldUid: e253aa26-3e38-462b-8c01-9b6fcf163df7
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 79e4dbfa-b8c7-4f85-a703-282c86fac38b
+            fieldUid: 6eb08eae-6f58-4839-a6ec-4b96a1c6ac42
             instructions: null
             label: null
             required: false
@@ -25,25 +25,31 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  79e4dbfa-b8c7-4f85-a703-282c86fac38b:
-    contentColumnType: string(255)
+  6eb08eae-6f58-4839-a6ec-4b96a1c6ac42:
+    contentColumnType: text
     fieldGroup: null
-    handle: socialNetworkUrl
+    handle: contactInput
     instructions: ''
-    name: 'Social network url'
+    name: 'Contact input'
     searchable: false
     settings:
-      maxLength: '255'
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Url
-  a78a3e79-8b2e-4108-aef0-4a2bd7003adb:
+    type: craft\fields\PlainText
+  e253aa26-3e38-462b-8c01-9b6fcf163df7:
     contentColumnType: string
     fieldGroup: null
-    handle: socialIcon
+    handle: contactIcon
     instructions: ''
-    name: 'Social icon'
+    name: 'Contact icon'
     searchable: false
     settings:
       optgroups: true
@@ -52,10 +58,10 @@ fields:
           __assoc__:
             -
               - label
-              - Facebook
+              - Adress
             -
               - value
-              - 'fab fa-facebook-f'
+              - 'fas fa-home mr-3'
             -
               - default
               - ''
@@ -63,10 +69,10 @@ fields:
           __assoc__:
             -
               - label
-              - Twitter
+              - E-mail
             -
               - value
-              - 'fab fa-twitter'
+              - 'fas fa-envelope mr-3'
             -
               - default
               - ''
@@ -74,10 +80,10 @@ fields:
           __assoc__:
             -
               - label
-              - 'Google plus'
+              - Phone
             -
               - value
-              - 'fab fa-google-plus-g'
+              - 'fas fa-phone mr-3'
             -
               - default
               - ''
@@ -85,27 +91,16 @@ fields:
           __assoc__:
             -
               - label
-              - LinkedIn
+              - Fax
             -
               - value
-              - 'fab fa-linkedin-in'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Instagram
-            -
-              - value
-              - 'fab fa-instagram'
+              - 'fas fa-print mr-3'
             -
               - default
               - ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
-handle: item
-name: item
+handle: contactInfo
+name: 'Contact info'
 sortOrder: 1

@@ -17,7 +17,7 @@ propagationMethod: all
 siteSettings:
   0c2d02e9-1d1e-4615-a309-ed793efd7840:
     enabledByDefault: true
-    hasUrls: true
-    template: segment\sidebar
-    uriFormat: 'sidebar/{slug}'
-type: channel
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

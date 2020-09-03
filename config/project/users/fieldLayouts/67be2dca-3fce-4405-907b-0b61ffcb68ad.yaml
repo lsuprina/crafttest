@@ -1,0 +1,45 @@
+tabs:
+  -
+    elements:
+      -
+        fieldUid: c3912c0d-5273-4027-8ea7-74c0ca7ec838
+        instructions: 'Write a title to the section about yourself'
+        label: __blank__
+        required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+      -
+        fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
+        instructions: 'Write something about yourself'
+        label: Description
+        required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+      -
+        fieldUid: 7e0cbfd5-23cc-42e0-9ae9-338c7c7d3298
+        instructions: 'Add your social network profile links'
+        label: 'Social links'
+        required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+    name: More
+    sortOrder: 1
+  -
+    elements:
+      -
+        fieldUid: f9662815-850c-43a1-8dbc-a0049bab76f8
+        instructions: ''
+        label: Contact
+        required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+    name: Contact
+    sortOrder: 2

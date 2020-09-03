@@ -1,7 +1,6 @@
 allowPublicRegistration: false
-defaultGroup: null
-fieldLayouts:
-  9acc7496-b2f1-47d1-b5be-99664b69fbff: null
-photoSubpath: null
-photoVolumeUid: null
+defaultGroup: ''
+photoSubpath: web/assets/images
+photoVolumeUid: 60c29eeb-2175-462e-9517-e857a5b04145
 requireEmailVerification: true
+suspendByDefault: false

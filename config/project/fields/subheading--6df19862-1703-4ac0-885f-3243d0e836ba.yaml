@@ -2,7 +2,7 @@ contentColumnType: text
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
 handle: subheading
 instructions: ''
-name: subheading
+name: Subheading
 searchable: false
 settings:
   byteLimit: null

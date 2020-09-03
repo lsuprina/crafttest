@@ -2,7 +2,7 @@ contentColumnType: text
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
 handle: button1
 instructions: ''
-name: button1
+name: 'Button 1'
 searchable: false
 settings:
   byteLimit: null

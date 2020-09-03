@@ -64,10 +64,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7e0cbfd5-23cc-42e0-9ae9-338c7c7d3298
+            fieldUid: 3bac0044-530b-485f-9ff0-6a4fabfac90a
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5f1aae22-caf5-4f32-9f29-2d98911d9794
+            instructions: ''
+            label: 'Link to post'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
