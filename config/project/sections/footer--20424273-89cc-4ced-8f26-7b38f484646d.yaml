@@ -1,6 +1,6 @@
 enableVersioning: true
 handle: footer
-name: footer
+name: Footer
 previewTargets:
   -
     __assoc__:

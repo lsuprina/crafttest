@@ -1,12 +1,11 @@
-contentColumnType: string(255)
+contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: featurePostUrl
+handle: subscriber
 instructions: ''
-name: 'Feature post URL'
+name: Subscriber
 searchable: false
 settings:
-  maxLength: '255'
   placeholder: ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Url
+type: craft\fields\Email

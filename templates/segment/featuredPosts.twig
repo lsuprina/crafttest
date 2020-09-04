@@ -5,7 +5,8 @@
 </p>
 <hr>
 
-{% set featuredPosts = craft.entries().section('article').all() %}
+{% set featuredPosts = craft.entries().section('featuredPosts').one() %}
+{% set articles = featuredPosts.featuredPost.all() %}
 
 <!-- Featured posts -->
 <section class="mb-5">
@@ -19,7 +20,7 @@
       <div id="carousel-example-4" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          {% for key,featuredPost in featuredPosts|keys %}
+          {% for key,article in articles %}
             <li data-target="#carousel-example-4" data-slide-to="{{key}}" class="{{loop.first ? 'active'}}"></li>
           {% endfor %}
         </ol>
@@ -28,32 +29,35 @@
         <!-- Slides -->
         <div class="carousel-inner" role="listbox">
 
-        {% for featuredPost in featuredPosts %}
-          <!-- Slide -->
-          <div class="carousel-item active">
-            <!-- Mask color -->
-            <div class="view">
-              <img src="{{featuredPost.image.one().url}}"
-                class="img-fluid" alt="">
-              <a href="{{featuredPost.url}}">
-                <div class="mask flex-center rgba-stylish-strong"></div>
-              </a>
-            </div>
-            <!-- Caption -->
-            <div class="carousel-caption">
-              <div class="animated fadeInDown">
-                <h4 class="h4-responsive">
-                  <a href="{{featuredPost.url}}" class="white-text font-weight-bold">{{featuredPost.heading}}</a>
-                </h4>
-                <p>
-                  <a href="{{featuredPost.url}}" class="white-text">{{featuredPost.text|striptags|slice(0,10)}}</a>
-                </p>
+        {% for article in articles %}
+
+            <!-- Slide -->
+            <div class="carousel-item {{loop.first ? 'active'}}">
+              <!-- Mask color -->
+              <div class="view">
+                <img src="{{article.image.one().url}}"
+                  class="img-fluid" alt="">
+                <a href="{{article.featuredPostUrl}}">
+                  <div class="mask flex-center rgba-stylish-strong"></div>
+                </a>
               </div>
+              <!-- Caption -->
+              <div class="carousel-caption">
+                <div class="animated fadeInDown">
+                  <h4 class="h4-responsive">
+                    <a href="{{article.featuredPostUrl}}" class="white-text font-weight-bold">{{article.heading}}</a>
+                  </h4>
+                  <p>
+                    <a href="{{article.featuredPostUrl}}" class="white-text">{{article.text|striptags|slice(0,10)}}</a>
+                  </p>
+                </div>
+              </div>
+              <!-- Caption -->
             </div>
-            <!-- Caption -->
-          </div>
-          <!-- Slide -->
+            <!-- Slide -->
+            
         {% endfor %}
+        
         </div>
         <!-- Slides -->
 

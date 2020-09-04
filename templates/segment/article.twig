@@ -11,13 +11,12 @@
 
 {% for article in articles %}
 
-            {% set image = article.image.one() %}
               <!-- Grid column -->
               <div class="col-md-12">
 
                 <!-- Image -->
                 <div class="view overlay z-depth-1 mb-3">
-                  <img src="{{image.url}}"
+                  <img src="{{article.image.one().url}}"
                     class="img-fluid">
                   <a href="#!">
                     <div class="mask rgba-white-slight"></div>
@@ -40,7 +39,6 @@
                 </div>
                 
     {% set user = craft.users().group('bloggers').one() %}
-   
 
                 <!-- Post data -->
                 <div class="post-data mt-3 pt-3 grey-text">

@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: comments
-name: Comments
+handle: featuredPosts
+name: 'Featured posts'
 previewTargets:
   -
     __assoc__:
@@ -17,7 +17,7 @@ propagationMethod: all
 siteSettings:
   0c2d02e9-1d1e-4615-a309-ed793efd7840:
     enabledByDefault: true
-    hasUrls: true
+    hasUrls: false
     template: null
-    uriFormat: 'comments/{slug}'
-type: channel
+    uriFormat: null
+type: single

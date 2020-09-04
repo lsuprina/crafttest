@@ -4,26 +4,58 @@
   </p>
 <hr>
 
+
+
 <!-- Newsletter -->
 <section class="mb-5">
+
+{% macro errorList(errors) %}
+  {% if errors %}
+    <ul class="errors">
+      {% for error in errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% set entry = entry ?? create('craft\\elements\\Entry') %}
 
   <!-- Grid row -->
   <div class="row mt-4">
 
     <!-- Grid column -->
-    <div class="col-md-12">
+    <form class="col-md-12" method="post">
+      {{ csrfInput() }}
+      {{ actionInput('entries/save-entry') }}
+      {{ redirectInput('..') }}
+      {{ hiddenInput('sectionId', '18') }}
+      {{ hiddenInput('enabled', '1') }}
 
-      <div class="input-group md-form form-sm form-3 pl-0">
+                <div class="md-form mb-0">
+                  <label for="form-contact-message">Enter your email adress</label>
+                  <textarea type="text" id="form-contact-message" class="form-control mt-0 black-border rgba-white-strong" rows="1" name=""></textarea>
+                  <button type="submit" class="btn btn-grey btn-block mt-4">{{layout.signUpLabel}}
+                  </button>
+                </div>
+
+
+      {# <div >
         <div class="input-group-prepend">
-          <span class="input-group-text white black-text" id="basic-addon9">@</span>
+          <label for="email" class="input-group-text white black-text" id="basic-addon9">Enter your email adress</label>
         </div>
-        <input type="text" class="form-control mt-0 black-border rgba-white-strong" placeholder="Username"
-          aria-describedby="basic-addon9">
+
+
+
+        {{ input('email', 'email', entry.subscriber, {id: 'email', class: 'form-control mt-0 black-border rgba-white-strong' , placeholder: 'info@example.com'}) }}
+        {{ _self.errorList(entry.getErrors('email')) }}
+        <!--input type="text" class="form-control mt-0 black-border rgba-white-strong" placeholder="info@example.com"
+          aria-describedby="basic-addon9"-->
       </div>
 
-      <button type="button" class="btn btn-grey btn-block mt-4">Sign up</button>
+      <button type="submit" class="btn btn-grey btn-block mt-4">Sign up</button> #}
 
-    </div>
+    </form>
     <!-- Grid column -->
 
   </div>

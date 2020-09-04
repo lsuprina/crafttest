@@ -1,4 +1,4 @@
-dateModified: 1599141943
+dateModified: 1599230309
 email:
   fromEmail: lsuprina@foi.hr
   fromName: craft_test
@@ -8,10 +8,31 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  mailchimp-lists:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.1.0
+  mailchimp-subscribe:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   redactor:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  wheelform:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      cp_label: Forms
+      from_email: marthabarnett@mail.com
+      from_name: ''
+      recaptcha_public: ''
+      recaptcha_secret: ''
+      recaptcha_version: '2'
+      success_message: 'Thank You! we will review your submission shortly.'
+      volume_id: ''
 system:
   edition: pro
   live: true

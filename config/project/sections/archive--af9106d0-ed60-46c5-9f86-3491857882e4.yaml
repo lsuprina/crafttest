@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: comments
-name: Comments
+handle: archive
+name: Archive
 previewTargets:
   -
     __assoc__:
@@ -18,6 +18,6 @@ siteSettings:
   0c2d02e9-1d1e-4615-a309-ed793efd7840:
     enabledByDefault: true
     hasUrls: true
-    template: null
-    uriFormat: 'comments/{slug}'
+    template: segment\archive
+    uriFormat: 'archive/{slug}'
 type: channel

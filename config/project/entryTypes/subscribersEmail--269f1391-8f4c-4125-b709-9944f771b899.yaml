@@ -1,5 +1,5 @@
 fieldLayouts:
-  a4c5b748-d1d9-402a-acb9-3cff8d3b85ac:
+  f6d55880-ad0a-4dfd-8a02-2bfa54229197:
     tabs:
       -
         elements:
@@ -26,13 +26,22 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
+          -
+            fieldUid: 77965867-bc22-4a9a-9292-4712bfed2994
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
-handle: home
+handle: subscribersEmail
 hasTitleField: false
-name: Home
-section: d597c665-e4bd-4909-9005-c93fc243b3fa
-sortOrder: 1
-titleFormat: '{section.name|raw}'
+name: 'Subscribers email'
+section: d2d73eda-3c35-430a-ad72-a7a9f3aa80b9
+sortOrder: 2
+titleFormat: email
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -1,6 +1,6 @@
 enableVersioning: true
 handle: home
-name: home
+name: Home
 previewTargets:
   -
     __assoc__:

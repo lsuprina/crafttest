@@ -1,6 +1,6 @@
 description: ''
 handle: bloggers
-name: bloggers
+name: Bloggers
 permissions:
   - accesssitewhensystemisoff
   - accesscpwhensystemisoff

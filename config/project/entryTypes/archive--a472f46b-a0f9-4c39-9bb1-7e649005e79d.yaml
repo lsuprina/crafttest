@@ -1,5 +1,5 @@
 fieldLayouts:
-  a4c5b748-d1d9-402a-acb9-3cff8d3b85ac:
+  c540c9bd-b46b-4ae9-8689-21409fbe4508:
     tabs:
       -
         elements:
@@ -26,13 +26,22 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
+          -
+            fieldUid: baec9db7-83fc-4e15-b797-6eeb2fc67880
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
-handle: home
-hasTitleField: false
-name: Home
-section: d597c665-e4bd-4909-9005-c93fc243b3fa
+handle: archive
+hasTitleField: true
+name: Archive
+section: af9106d0-ed60-46c5-9f86-3491857882e4
 sortOrder: 1
-titleFormat: '{section.name|raw}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

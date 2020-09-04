@@ -1,20 +1,21 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: bloggerUsername
+handle: featuredPost
 instructions: ''
-name: 'Blogger username'
-searchable: true
+name: 'Featured post'
+searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  limit: '3'
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true
   source: null
-  sources: '*'
+  sources:
+    - 'section:44c2f1be-4e60-4d0f-814b-50daa6e38386'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site
-type: craft\fields\Users
+type: craft\fields\Entries

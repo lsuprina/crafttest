@@ -1,6 +1,6 @@
 enableVersioning: true
 handle: sidebar
-name: sidebar
+name: Sidebar
 previewTargets:
   -
     __assoc__:

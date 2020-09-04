@@ -13,7 +13,7 @@
     <!-- Grid column -->
     <div class="col-md-6 col-lg-12">
 
-    {% for popularPost in popularPosts|sort((a,b) => b.comment|length <=> a.comment|length)|slice(0,2) %}
+    {% for popularPost in popularPosts|sort((a,b) => b.comment|length <=> a.comment|length)|slice(0,3) %}
 
         <!-- Image -->
         <div class="view overlay z-depth-1">

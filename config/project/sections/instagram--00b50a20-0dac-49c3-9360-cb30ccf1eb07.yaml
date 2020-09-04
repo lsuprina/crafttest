@@ -1,6 +1,6 @@
 enableVersioning: true
 handle: instagram
-name: instagram
+name: Instagram
 previewTargets:
   -
     __assoc__:
