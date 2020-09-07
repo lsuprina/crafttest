@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: footer
-name: Footer
+handle: footerSection
+name: 'Footer section'
 previewTargets:
   -
     __assoc__:
@@ -17,7 +17,7 @@ propagationMethod: all
 siteSettings:
   0c2d02e9-1d1e-4615-a309-ed793efd7840:
     enabledByDefault: true
-    hasUrls: true
-    template: common\footer
-    uriFormat: 'footer/{slug}'
+    hasUrls: false
+    template: null
+    uriFormat: null
 type: channel

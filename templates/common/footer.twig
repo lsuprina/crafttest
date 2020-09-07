@@ -1,5 +1,6 @@
 <footer class="page-footer stylish-color-dark text-center text-md-left mt-4 pt-4">
 {% set user = craft.users().group('bloggers').one() %}
+{% set footerColumns = craft.entries().section('footerSection').all() %}
 
     <!-- Footer Links -->
     <div class="container">
@@ -9,51 +10,27 @@
 
         <!-- First column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">About me</h6>
-          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.</p>
+          <h6 class="text-uppercase mb-4 font-weight-bold">{{layout.aboutMeLabel}}</h6>
+          <p>{{user.text}}</p>
         </div>
         <!-- First column -->
 
         <hr class="w-100 clearfix d-md-none">
 
         <!-- Second column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Category</h6>
-          <p>
-            <a href="#!">Lifestyle</a>
-          </p>
-          <p>
-            <a href="#!">Travel</a>
-          </p>
-          <p>
-            <a href="#!">Work</a>
-          </p>
-          <p>
-            <a href="#!">Fashion</a>
-          </p>
-        </div>
-        <!-- Second column -->
+        {% for footerColumn in footerColumns %}
+          <div class="{{loop.first ? 'col-md-2 col-lg-2 col-xl-2 mx-auto mt-3' : 'col-md-3 col-lg-2 col-xl-2 mx-auto mt-3' }}">
+            <h6 class="text-uppercase mb-4 font-weight-bold">{{footerColumn.title}}</h6>
+            {% for footerLink in footerColumn.footerLinks.all() %}
+              <p>
+                <a href="{{footerLink.navigationLink}}">{{footerLink.title}}</a>
+              </p>
+            {% endfor %}
+          </div>
+        {% endfor %}
 
-        <hr class="w-100 clearfix d-md-none">
 
-        <!-- Third column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-          <p>
-            <a href="#!">Collaboriation</a>
-          </p>
-          <p>
-            <a href="#!">Media about me</a>
-          </p>
-          <p>
-            <a href="#!">Newsletter</a>
-          </p>
-          <p>
-            <a href="#!">Help</a>
-          </p>
-        </div>
-        <!-- Third column -->
+          
 
         <hr class="w-100 clearfix d-md-none">
 

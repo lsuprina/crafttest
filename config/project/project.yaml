@@ -1,4 +1,4 @@
-dateModified: 1599230309
+dateModified: 1599488326
 email:
   fromEmail: lsuprina@foi.hr
   fromName: craft_test
@@ -8,14 +8,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  mailchimp-lists:
-    edition: standard
-    enabled: true
-    schemaVersion: 0.1.0
-  mailchimp-subscribe:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   redactor:
     edition: standard
     enabled: true

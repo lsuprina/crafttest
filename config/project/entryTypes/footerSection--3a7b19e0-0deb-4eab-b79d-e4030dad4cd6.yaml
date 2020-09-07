@@ -19,7 +19,6 @@ fieldLayouts:
             placeholder: null
             readonly: false
             requirable: false
-            required: false
             size: null
             step: null
             tip: null
@@ -27,11 +26,20 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
+          -
+            fieldUid: dea09149-7401-480f-b50c-9a304d2c9b71
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
-handle: footer
+handle: footerSection
 hasTitleField: true
-name: footer
+name: 'Footer section'
 section: 20424273-89cc-4ced-8f26-7b38f484646d
 sortOrder: 1
 titleFormat: null

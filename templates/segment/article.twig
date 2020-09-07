@@ -1,71 +1,126 @@
 <!-- Main listing -->
-{% set articles = craft.entries().orderBy('dateCreated desc').section('article').all() %}
-        <div class="col-lg-8 col-12 mx-lg-4">
-
-          <!-- Section: Classic blog listing -->
-          <section class="classic-blog-listing">
-
-            <!-- Grid row -->
-            <div class="row mb-5">
+{% set articles = craft.entries().orderBy('dateCreated desc').section('article').limit(2) %}
+{% paginate articles as pageInfo, pageEntries %}
 
 
-{% for article in articles %}
+<div class="col-lg-8 col-12 mx-lg-4">
 
-              <!-- Grid column -->
-              <div class="col-md-12">
 
-                <!-- Image -->
-                <div class="view overlay z-depth-1 mb-3">
-                  <img src="{{article.image.one().url}}"
-                    class="img-fluid">
-                  <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
-                </div>
+  <!-- Section: Classic blog listing -->
+  <section class="classic-blog-listing">
 
-                <!-- Excerpt -->
-                <a>
-                  <p class="text-center font-weight-bold gold-text mt-4">{{article.subheading|upper}}</p>
+    <!-- Grid row -->
+    <div class="row mb-5">
+
+
+      {% for article in articles %}
+        <!-- Grid column -->
+        <div class="col-md-12">
+
+          <!-- Image -->
+          <div class="view overlay z-depth-1 mb-3">
+            <img src="{{article.image.one().url}}"
+              class="img-fluid">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!-- Excerpt -->
+          <a>
+            <p class="text-center font-weight-bold gold-text mt-4">{{article.subheading|upper}}</p>
+          </a>
+
+          <h2 class="text-center font-weight-bold dark-grey-text pb-3">
+            <strong>{{article.heading}}</strong>
+          </h2>
+
+          <p class="dark-grey-text">{{article.text}}</p>
+
+          <div class="text-center pb-2">
+            <a class="btn btn-transparent btn-sm font-weight-bold btn-rounded dark-grey-text" href="{{article.uri}}">{{layout.readMore}}</a>
+          </div>
+                      
+          {% set user = craft.users().group('bloggers').one() %}
+
+          <!-- Post data -->
+          <div class="post-data mt-3 pt-3 grey-text">
+            <h6>By
+              <a href="#!" class="gold-text">{{user.firstName}} {{user.lastName}}</a> on {{article.postDate|date('d/m/y')}}
+              <a href="#!" class="dark-grey-text">
+                <i class="far fa-comments pr-2 pl-3"></i>{{article.comment|length}}</a>
+            </h6>
+
+            <ul class="list-unstyled list-inline circle-icons">
+            {% for item in user.socialLinks.all() %}
+                <li class="list-inline-item mr-0">
+                <a href="{{item.socialNetworkUrl}}" target="_blank">
+                  <i class="{{item.socialIcon.value}}"></i>
                 </a>
+              </li>
+            {% endfor %}
+            </ul>
 
-                <h2 class="text-center font-weight-bold dark-grey-text pb-3">
-                  <strong>{{article.heading}}</strong>
-                </h2>
+          </div>
 
-                <p class="dark-grey-text">{{article.text}}</p>
+        </div>
+      {% endfor %}
+        <!-- Grid column -->
 
-                <div class="text-center pb-2">
-                  <a class="btn btn-transparent btn-sm font-weight-bold btn-rounded dark-grey-text" href="{{article.uri}}">{{layout.readMore}}</a>
-                </div>
-                
-    {% set user = craft.users().group('bloggers').one() %}
-
-                <!-- Post data -->
-                <div class="post-data mt-3 pt-3 grey-text">
-                  <h6>By
-                    <a href="#!" class="gold-text">{{user.firstName}} {{user.lastName}}</a> on {{article.postDate|date('d/m/y')}}
-                    <a href="#!" class="dark-grey-text">
-                      <i class="far fa-comments pr-2 pl-3"></i>{{article.comment|length}}</a>
-                  </h6>
-
-                  <ul class="list-unstyled list-inline circle-icons">
-                  {% for item in user.socialLinks.all() %}
-                      <li class="list-inline-item mr-0">
-                      <a href="{{item.socialNetworkUrl}}" target="_blank">
-                        <i class="{{item.socialIcon.value}}"></i>
-                      </a>
-                    </li>
-                  {% endfor %}
-                  </ul>
-
-                </div>
-
-              </div>
-              {% endfor %}
-              <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
-        </section>
-      {% include "segment/pageNumber.twig" %}
     </div>
+    <!-- Grid row -->
+
+  </section>
+
+<!-- Pagination dark grey -->
+  <nav class="mb-5 pb-2">
+    <ul class="pagination pg-dark flex-center">
+      <!-- Arrow left -->
+      {% if pageInfo.prevUrl %}
+        <li class="page-item">
+          <a class="page-link" aria-label="Previous" href="{{ pageInfo.prevUrl }}">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% for page, url in pageInfo.getPrevUrls(5) %}
+      
+				<li class="page-item ">
+					<a href="{{ url }}" class="page-link waves-effect waves-effect">{{ page }}</a>
+				</li>
+
+			{% endfor %}
+
+      
+			<li class="page-item {{ pageInfo.currentPage? " active" }}">
+				<a href="" class="page-link waves-effect waves-effect">{{ pageInfo.currentPage }}</a>
+			</li>
+
+			{% for page, url in pageInfo.getNextUrls(5) %}
+				<li class="page-item">
+					<a href="{{ url }}" class="page-link waves-effect waves-effect">{{ page }}</a>
+				</li>
+			{% endfor %}
+
+      {% if pageInfo.nextUrl %}
+        <li class="page-item">
+          <a class="page-link" aria-label="Next" href="{{ pageInfo.nextUrl }}">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      {% endif %}
+  
+    </ul>
+  </nav>
+  <!-- Pagination dark grey -->
+
+
+  {#% block pagination %}{% endblock %#}
+        {# https://craftcms.com/docs/3.x/dev/tags.html#paginate #}
+        
+      {#% include "segment/pagination.twig" %#}
+
+</div>

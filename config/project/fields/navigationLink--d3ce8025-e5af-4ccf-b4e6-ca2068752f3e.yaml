@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
+handle: navigationLink
+instructions: ''
+name: 'Navigation link'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

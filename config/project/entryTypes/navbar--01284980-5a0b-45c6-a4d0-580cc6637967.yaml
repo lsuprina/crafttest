@@ -1,5 +1,5 @@
 fieldLayouts:
-  12227e17-707b-4e1e-b092-4e803c9651ef:
+  b0ed0406-0330-4db0-9a10-b2de2fc9485f:
     tabs:
       -
         elements:
@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2355d39d-47da-4e82-b50a-e099208d5eee
+            fieldUid: 5c8d5b3d-d97e-4338-a808-41a3268c37c7
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6df19862-1703-4ac0-885f-3243d0e836ba
+            fieldUid: eb4d58d1-ecfd-435b-815c-e45c804eca0c
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c3912c0d-5273-4027-8ea7-74c0ca7ec838
+            fieldUid: 924479a8-deb0-4779-bfab-791cac2bcef4
             instructions: null
             label: null
             required: false
@@ -54,34 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 3bac0044-530b-485f-9ff0-6a4fabfac90a
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 5f1aae22-caf5-4f32-9f29-2d98911d9794
-            instructions: ''
-            label: 'Link to post'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 83eb2d75-b752-43b3-8a9c-6ab11850546f
+            fieldUid: f9662815-850c-43a1-8dbc-a0049bab76f8
             instructions: null
             label: null
             required: false
@@ -91,11 +64,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: article
-hasTitleField: true
-name: article
-section: 44c2f1be-4e60-4d0f-814b-50daa6e38386
+handle: navbar
+hasTitleField: false
+name: Navbar
+section: c8d9e7a4-1046-484c-8368-6fc5aac8576d
 sortOrder: 1
-titleFormat: null
+titleFormat: 'Navigation bar'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
