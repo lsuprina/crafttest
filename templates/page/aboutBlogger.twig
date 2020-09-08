@@ -1,0 +1,153 @@
+{% extends "layout" %}
+
+{% block main %}
+
+<body class="authorpage-v1">
+
+{% set user = craft.users().group('bloggers').one() %}
+{% set about = craft.entries().section('about').one() %}
+
+  <!-- Intro -->
+  <section>
+    <div class="container-fluid">
+
+      <!-- Excerpt -->
+      <br>
+      <h1 class="text-center dark-grey-text pb-3 mt-5 pt-5">
+        <strong>{{user.heading|upper}}</strong></h1>
+
+      <p class="grey-text text-center mb-4 text-uppercase spacing">SOME FACTS ABOUT ME </p>
+
+      <!-- Grid row -->
+      <div class="row flex-center">
+
+        <!-- Grid column -->
+        <div class="col-md-10 col-xl-5">
+
+          <p class="grey-text text-center">
+            <em>{{user.fact}}</em>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+  </section>
+  <!-- Intro -->
+
+  <!-- Blog section -->
+  <section>
+
+    <div class="container-fluid grey lighten-4">
+      <hr class="my-5">
+      <div class="container">
+
+        <!-- Blog -->
+        <div class="row mt-5 pt-3">
+
+          <!-- Main listing -->
+          <div class="col-lg-12 col-12 mt-1 mx-lg-4">
+
+            <!-- Section: Blog v.3 -->
+            <section class="pb-3 text-center text-lg-left">
+
+              <!-- Grid row -->
+              <div class="row mb-5 pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-12">
+                  <!-- Card -->
+                  <div class="card">
+
+                    <!-- Card image -->
+                    <div class="view overlay">
+                      <img src="{{about.background.one().url}}" class="card-img-top" alt="">
+                      <div class="mask rgba-white-slight"></div>
+                    </div>
+                    <!-- Card image -->
+
+                    <!-- Card content -->
+                    <div class="card-body mx-4">
+                      <!-- Title -->
+                      <h4 class="card-title mt-4">
+                        <strong>{{about.title}}</strong>
+                      </h4>
+                      <hr>
+
+                      <!-- Grid row -->
+                      <div class="row mt-4">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+
+                          <!-- Text -->
+                          <p class="dark-grey-text mb-3">{{about.text}}</p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+
+                          <!-- Text -->
+                          <p class="dark-grey-text mb-3">{{about.paragraphField}}</p>
+                            <hr>
+
+                            <h5 class="h5-responsive font-weight-bold text-center mt-4">
+                              <strong>Find me on social media</strong>
+                            </h5>
+
+                            <!-- Grid row -->
+                            <div class="row">
+
+                              <!-- Grid column -->
+                              <div class="col-md-12 text-center">
+
+                                {% for item in user.socialLinks.all() %}
+                                    <a href="{{item.socialNetworkUrl}}" class="rgba-white-slight mr-xl-4" target="_blank">
+                                    <i class="{{item.socialIcon.value}}"></i>
+                                    </a>
+                                {% endfor %}
+
+                              </div>
+                              <!-- Grid column -->
+
+                            </div>
+                            <!-- Grid row -->
+
+                        </div>
+                        <!-- Grid column -->
+
+                      </div>
+                      <!-- Grid row -->
+
+                    </div>
+                    <!-- Card content -->
+
+                  </div>
+                  <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+            </section>
+            <!-- Section: Blog v.3 -->
+
+          </div>
+          <!-- Main listing -->
+
+        </div>
+        <!-- Blog -->
+
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}

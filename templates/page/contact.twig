@@ -1,0 +1,86 @@
+{% extends "layout" %}
+
+{% block main %}
+    <div class="text-center">
+        <h1  style="padding-top:8%">Contact me</h1>
+        <h3>Write your name, email and message</h3>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <form class="text-center border border-light p-5"  method="post">
+                    {{ csrfInput() }}
+                    {{ actionInput('entries/save-entry') }}
+                    {{ redirectInput('/contact') }}
+                    {{ hiddenInput('sectionId', '29') }}
+                    {{ hiddenInput('enabled', '1') }}
+
+                    {% macro errorList(errors) %}
+                    {% if errors %}
+                        <ul class="errors">
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% endmacro %}
+                    {% from _self import errorList %}
+
+                    {% set form = wheelform.form({id: 1,}) %}
+
+                    {{ form.open() }}
+                    {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+                    <div class="row">
+                        <!-- Grid row -->
+
+                        <!--Grid column-->
+                        <div class="col-md-9 mb-md-0 mb-5">
+
+                                <!--Grid row-->
+                                <div class="row">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="name" name="name" class="form-control">
+                                            <label for="name" class="">Your name</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="text" id="email" name="email" class="form-control">
+                                            <label for="email" class="">Your email</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+
+                                </div>
+                                <!--Grid row-->
+
+                                <!--Grid row-->
+                                <div class="row">
+
+                                    <!--Grid column-->
+                                    <div class="col-md-12">
+
+                                        <div class="md-form">
+                                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                            <label for="message">Your message</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+
+                            <div class="text-center text-md-left">
+                                <button type="submit" class="btn btn-grey mt-4">{{layout.send}}</button>
+                            </div>
+                            <div class="status"></div>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                </form>
+        </div>
+    </div>
+{% endblock %}

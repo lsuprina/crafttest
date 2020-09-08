@@ -1,47 +1,11 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
-    <title>Welcome to Craft CMS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="referrer" content="origin-when-cross-origin" />
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/mdb.css">
-    <link rel="stylesheet" href="/assets/css/mdb.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/style.min.css">
-    <link rel="stylesheet" href="/assets/css/modules/animations-extended.css">
-    <link rel="stylesheet" href="/assets/css/modules/animations-extended.min.css">
-    <link rel="stylesheet" href="/assets/css/addons/datatables.css">
-    <link rel="stylesheet" href="/assets/css/addons/datatables-select.css">
-    <link rel="stylesheet" href="/assets/css/addons/datatables-select.min.css">
-    <link rel="stylesheet" href="/assets/css/addons/datatables.min.css">
-    <link rel="stylesheet" href="/assets/css/addons/directives.css">
-    <link rel="stylesheet" href="/assets/css/addons/directives.min.css">
-    <link rel="stylesheet" href="/assets/css/addons/flag.css">
-    <link rel="stylesheet" href="/assets/css/addons/flag.min.css">
-    <link rel="stylesheet" href="/assets/css/addons/rating.css">
-    <link rel="stylesheet" href="/assets/css/addons/rating.min.css">
-    <link rel="stylesheet" href="/assets/css/addons/zmd.hierarchical-display.css">
-    <link rel="stylesheet" href="/assets/css/addons/zmd.hierarchical-display.min.css">
-</head>
-    
-<body>
+{% extends "layout" %}
 
-
-    {% include "common/nav.twig" %}
+{% block main %}
     <main>
+      {% include "segment/intro.twig" %}
       <div class="container mt-5 pt-3">
       <div class="row">
-      {% include "segment/article.twig" %} <!-- sredi url za pagination -->
+      {% include "segment/article.twig" %}
       {% include "segment/sidebar.twig" %}
     </main>
-    {% include "common/footer.twig" %}
-    {% include "common/scripts.twig" %}
-    
-</body>
-</html>
+{% endblock %}

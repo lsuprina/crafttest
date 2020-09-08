@@ -1,8 +1,17 @@
 fieldLayouts:
-  b0ed0406-0330-4db0-9a10-b2de2fc9485f:
+  a1204d62-96b4-4444-92bf-6ae603d025fd:
     tabs:
       -
         elements:
+          -
+            fieldUid: 428bfa96-db7a-4f06-a3a3-f911c4e6701d
+            instructions: ''
+            label: Photo
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             autocapitalize: true
             autocomplete: false
@@ -27,48 +36,30 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5c8d5b3d-d97e-4338-a808-41a3268c37c7
-            instructions: null
-            label: null
-            required: false
+            fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
+            instructions: ''
+            label: 'First paragraph'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            fieldUid: eb4d58d1-ecfd-435b-815c-e45c804eca0c
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 924479a8-deb0-4779-bfab-791cac2bcef4
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a2a1fbd5-63c3-46d1-9fc2-8964614ef4b0
-            instructions: null
-            label: null
-            required: false
+            fieldUid: ce76bd18-7537-42d9-8002-d9bd60f39f95
+            instructions: ''
+            label: 'Second paragraph'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: navbar
-hasTitleField: false
-name: Navbar
-section: c8d9e7a4-1046-484c-8368-6fc5aac8576d
+handle: about
+hasTitleField: true
+name: About
+section: 0c36368b-abf8-4ec6-8b8c-b940150fd0cc
 sortOrder: 1
-titleFormat: 'Navigation bar'
+titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

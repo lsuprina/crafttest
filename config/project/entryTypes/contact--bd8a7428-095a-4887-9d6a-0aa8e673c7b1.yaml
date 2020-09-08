@@ -1,0 +1,38 @@
+fieldLayouts:
+  762558c8-5a84-4805-8af2-7011891aacc0:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: contact
+hasTitleField: false
+name: Contact
+section: d34a09b0-de17-4cfa-8f40-f84be4c0dd66
+sortOrder: 1
+titleFormat: contact
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

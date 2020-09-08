@@ -52,7 +52,7 @@
       {% for field in form.fields %}
             <div class="col-md-12">
               <div class="md-form mb-0">
-                <textarea type="email" id="form-contact-message" class="form-control mt-0 black-border rgba-white-strong" rows="1" name="{{field.name}}"></textarea>
+                <input type="email" id="form-contact-message" class="form-control mt-0 black-border rgba-white-strong" rows="1" name="{{field.name}}">
                 <label for="form-contact-message">{{field.label}}</label>
                 <button type="submit" class="btn btn-grey btn-block mt-4">{{layout.signUpLabel}}</button>
               </div>

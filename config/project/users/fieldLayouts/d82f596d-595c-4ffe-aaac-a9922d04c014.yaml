@@ -28,6 +28,15 @@ tabs:
         type: craft\fieldlayoutelements\CustomField
         warning: null
         width: 100
+      -
+        fieldUid: 54519729-6d5b-4a18-a21a-0526209c7a13
+        instructions: ''
+        label: 'Facts about author'
+        required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
     name: More
     sortOrder: 1
   -
@@ -37,6 +46,15 @@ tabs:
         instructions: ''
         label: Contact
         required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+      -
+        fieldUid: 924479a8-deb0-4779-bfab-791cac2bcef4
+        instructions: null
+        label: null
+        required: false
         tip: null
         type: craft\fieldlayoutelements\CustomField
         warning: null

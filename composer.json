@@ -6,7 +6,7 @@
     "focuslabllc/craft-cheat-sheet": "2.0.3",
     "lukeyouell/craft-mailchimplists": "^1.0",
     "vlucas/phpdotenv": "^3.4.0",
-    "xpertbot/craft-wheelform": "2.5.0"
+    "xpertbot/craft-wheelform": "2.5.1"
   },
   "require-dev": {
     "yiisoft/yii2-shell": "^2.0.3"

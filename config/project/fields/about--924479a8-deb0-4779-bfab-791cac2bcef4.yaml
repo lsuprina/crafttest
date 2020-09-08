@@ -6,7 +6,7 @@ name: About
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  limit: '1'
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true

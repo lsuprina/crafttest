@@ -1,8 +1,8 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: homepage
+handle: contactUs
 instructions: ''
-name: Homepage
+name: 'Contact us'
 searchable: false
 settings:
   allowSelfRelations: false

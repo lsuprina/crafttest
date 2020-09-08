@@ -4,13 +4,13 @@
   </p>
 <hr>
 
-{% set recentPosts = craft.entries().orderBy('dateCreated desc').section('article').all() %}
+{% set recentPosts = craft.entries().orderBy('dateCreated desc').section('article').limit(3).all() %}
 
 <!-- Section: Recent posts -->
 <section class="mb-5">
 
 
-		{% for recentPost in recentPosts %}
+	{% for recentPost in recentPosts %}
       <div class="post-border">
 			<!-- Grid row -->
 			<div
@@ -49,6 +49,6 @@
 			</div>
 			<!-- Grid row -->
       </div>
-		{% endfor %}
+	{% endfor %}
 </section>
 	

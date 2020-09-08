@@ -1,14 +1,14 @@
 <!-- Author -->
   <section class="mb-4">
 
-  {% set user = craft.users().group('bloggers').one() %}
-  <hr class="mt-4">
-    <p class="font-weight-bold dark-grey-text text-center spacing">
-      <strong>{{user.heading|upper}}</strong>
-    </p>
-  <hr>
+  {% set users = craft.users().group('bloggers').all() %}
   
-  
+  {% for user in users %}
+    <hr class="mt-4">
+      <p class="font-weight-bold dark-grey-text text-center spacing">
+        <strong>{{user.heading|upper}}</strong>
+      </p>
+    <hr>
     <!-- Avatar -->
     <div class="flex-center mt-4">
       <img src="{{user.photo.url}}" class="img-fluid img-author z-depth-1">
@@ -28,6 +28,7 @@
       </li>
     {% endfor %}
     </ul>
+  {% endfor %}
 
   </section>
   <!-- Author -->

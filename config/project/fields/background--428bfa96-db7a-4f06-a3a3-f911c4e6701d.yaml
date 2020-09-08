@@ -1,0 +1,30 @@
+contentColumnType: string
+fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
+handle: background
+instructions: ''
+name: Background
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:60c29eeb-2175-462e-9517-e857a5b04145'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: 'Choose the background for the post'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:60c29eeb-2175-462e-9517-e857a5b04145'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:60c29eeb-2175-462e-9517-e857a5b04145'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets
