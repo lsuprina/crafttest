@@ -12,7 +12,7 @@ previewTargets:
         - '{url}'
       -
         - refresh
-        - '1'
+        - ''
 propagationMethod: all
 siteSettings:
   0c2d02e9-1d1e-4615-a309-ed793efd7840:

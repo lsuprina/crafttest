@@ -1,5 +1,5 @@
 fieldLayouts:
-  762558c8-5a84-4805-8af2-7011891aacc0:
+  7c861024-12f5-4e0b-a304-c5accfd9a878:
     tabs:
       -
         elements:
@@ -26,13 +26,22 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
+          -
+            fieldUid: d3ce8025-e5af-4ccf-b4e6-ca2068752f3e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
-handle: contact
-hasTitleField: false
-name: Contact
-section: d34a09b0-de17-4cfa-8f40-f84be4c0dd66
+handle: page
+hasTitleField: true
+name: Page
+section: e28b7518-65aa-4895-a1ad-22d4bfdd8236
 sortOrder: 1
-titleFormat: contact
+titleFormat: page
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

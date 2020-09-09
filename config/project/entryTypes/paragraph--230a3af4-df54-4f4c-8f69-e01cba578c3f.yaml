@@ -1,5 +1,5 @@
 fieldLayouts:
-  b0ed0406-0330-4db0-9a10-b2de2fc9485f:
+  34cdd610-d05e-4151-a0bb-0d0ee3092af3:
     tabs:
       -
         elements:
@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a2572c08-4524-4505-94f6-c78a07d1c8d6
+            fieldUid: 6df19862-1703-4ac0-885f-3243d0e836ba
             instructions: null
             label: null
             required: false
@@ -36,25 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0b22dbab-3f98-4010-b8c4-bd06b85af04d
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 9e34eba5-6e90-44f5-bb90-d1b3b8948fe9
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 73499cea-80b7-440d-9a21-41a7817a868e
+            fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
             instructions: null
             label: null
             required: false
@@ -64,11 +46,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: navbar
+handle: paragraph
 hasTitleField: false
-name: Navbar
-section: c8d9e7a4-1046-484c-8368-6fc5aac8576d
+name: Paragraph
+section: 9c0738b8-52da-4bf1-8d8d-d9b2bf9c8e53
 sortOrder: 1
-titleFormat: 'Navigation bar'
+titleFormat: '{subheading}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

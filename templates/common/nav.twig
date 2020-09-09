@@ -2,7 +2,6 @@
   {% set user = craft.users().group('bloggers').one() %}
   {% set entries = craft.entries().section('navbar').one() %}
   {% set posts = craft.entries().section('navbar').all %}
-  {% set about = craft.entries().section('about') %}
 
     <!-- Navbar -->
     <div class="fixed-top">
@@ -29,7 +28,7 @@
                 PAGE </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-2">
                 {% for post in posts %}
-                  {% for postUrl in post.postPage.all() %}
+                  {% for postUrl in post.postpage.all() %}
                     <a class="dropdown-item waves-effect waves-light" href="{{postUrl.navigationLink}}">{{postUrl.title}}</a>
                   {% endfor %}
                 {% endfor %}
@@ -41,7 +40,7 @@
             </li>
             <li class="nav-item ml-4 mb-0">
               
-                <a class="nav-link waves-effect waves-light font-weight-bold" href="{{entries.contactUs.one().navigationLink}}">CONTACT
+              <a class="nav-link waves-effect waves-light font-weight-bold" href="{{entries.contactUs.one().navigationLink}}">CONTACT
                 <span class="sr-only">(current)</span>
               </a>
             

@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
+handle: postpage
+instructions: ''
+name: Postpage
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:e28b7518-65aa-4895-a1ad-22d4bfdd8236'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

@@ -38,7 +38,7 @@
                       <p class="font-small dark-grey-text mb-1">
                         <strong>Author:</strong>{{user.firstName}} {{user.lastName}}</p>
                       <p class="font-small grey-text mb-0 ml-3">
-                        <i class="far fa-clock-o dark-grey-text"></i>{{post.postDate|date('d/m/Y\\ H:i')}}</p>
+                        <i class="far fa-clock-o dark-grey-text"></i>{{post.postDate|date('d/m/Y \\a\\t H:i a')}}</p>
                     </div>
                   </div>
 
@@ -52,17 +52,10 @@
                         <!-- Grid row -->
                         <div class="row mt-3">
 
-                          <p class="dark-grey-text article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                            id est laborum.</p>
+                          <p class="dark-grey-text article">{{post.description}}</p>
 
                           <h4 class="font-weight-bold mt-3 mb-4">
-                            <strong>Lorem ipsum dolor sit amet</strong>
+                            <strong>{{post.heading}}</strong>
                           </h4>
 
                           <p class="dark-grey-text article">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -101,9 +94,9 @@
                             <button type="button" class="btn btn-outline-black waves-effect filter"
                               data-rel="all">All</button>
                             <button type="button" class="btn btn-outline-black waves-effect filter"
-                              data-rel="1">Mountains</button>
+                              data-rel="1">{{post.button1}}</button>
                             <button type="button" class="btn btn-outline-black waves-effect filter"
-                              data-rel="2">Sea</button>
+                              data-rel="2">{{post.button2}}</button>
 
                           </div>
                           <!-- Grid column -->
@@ -114,53 +107,35 @@
                         <!-- Grid row -->
                         <div class="gallery" id="gallery">
 
-                          <!-- Grid column -->
-                          <div class="mb-3 pics animation all 2">
-                            <img class="img-fluid rounded"
-                              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
-                              alt="Card image cap">
-                          </div>
-                          <!-- Grid column -->
-
-                          <!-- Grid column -->
-                          <div class="mb-3 pics animation all 1">
-                            <img class="img-fluid rounded" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg"
-                              alt="Card image cap">
-                          </div>
-                          <!-- Grid column -->
-
-                          <!-- Grid column -->
-                          <div class="mb-3 pics animation all 1">
-                            <img class="img-fluid rounded" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg"
-                              alt="Card image cap">
-                          </div>
-                          <!-- Grid column -->
-
-                          <!-- Grid column -->
-                          <div class="mb-3 pics animation all 2">
-                            <img class="img-fluid rounded"
-                              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-                              alt="Card image cap">
-                          </div>
-                          <!-- Grid column -->
-
-                          <!-- Grid column -->
-                          <div class="mb-3 pics animation all 2">
-                            <img class="img-fluid rounded"
-                              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                              alt="Card image cap">
-                          </div>
-                          <!-- Grid column -->
-
-                          <!-- Grid column -->
-                          <div class="mb-3 pics animation all 1">
-                            <img class="img-fluid rounded" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
-                              alt="Card image cap">
-                          </div>
-                          <!-- Grid column -->
+                          {% for image in post.image.all() %}
+                          
+                            <!-- Grid column -->
+                            {#% if post.button1|lower in image.url|lower %#}
+                              <div class="mb-3 pics animation all {% if post.button1|lower in image.url|lower %}{{1}}{% elseif post.button2|lower in image.url|lower  %}{{2}}{% endif %}">
+                                <img class="img-fluid rounded"
+                                  src="{{image.url}}"
+                                  alt="Card image cap">
+                                </div>
+                            {#% elseif post.button2|lower in image.url|lower  %}
+                              <div class="mb-3 pics animation all 2">
+                              <img class="img-fluid rounded"
+                                src="{{image.url}}"
+                                alt="Card image cap">
+                              </div>
+                            {% else %}
+                              <div class="mb-3 pics animation all">
+                              <img class="img-fluid rounded"
+                                src="{{image.url}}"
+                                alt="Card image cap">
+                              </div> }
+                            {% endif %#}
+                            <!-- Grid column -->
+                          
+                          {% endfor %}
 
                         </div>
                         <!-- Grid row -->
+
 
                         <!-- Grid row -->
                         <div class="row mb-2 mt-4">

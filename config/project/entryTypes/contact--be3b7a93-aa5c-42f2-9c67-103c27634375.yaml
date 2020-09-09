@@ -1,5 +1,5 @@
 fieldLayouts:
-  276711e4-d8fa-42c2-b1f3-f71ec1b4c7c8:
+  2a1c966d-bfe2-4e43-8a3b-c87257137000:
     tabs:
       -
         elements:
@@ -28,11 +28,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: sidebar
-hasTitleField: true
-name: Sidebar
-section: e91fd229-1347-4bba-b690-30b2e594f9af
+handle: contact
+hasTitleField: false
+name: Contact
+section: 4f9f737b-09af-4ee7-a54b-2b23c27c1c22
 sortOrder: 1
-titleFormat: null
+titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

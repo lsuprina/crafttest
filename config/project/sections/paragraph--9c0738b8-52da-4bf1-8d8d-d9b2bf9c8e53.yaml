@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: pages
-name: Pages
+handle: paragraph
+name: Paragraph
 previewTargets:
   -
     __assoc__:
@@ -9,7 +9,7 @@ previewTargets:
         - 'Primary entry page'
       -
         - urlFormat
-        - 'homepage/{slug}'
+        - '{url}'
       -
         - refresh
         - '1'
@@ -19,5 +19,5 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: null
-    uriFormat: 'pages/{slug}'
+    uriFormat: 'paragraph/{slug}'
 type: channel

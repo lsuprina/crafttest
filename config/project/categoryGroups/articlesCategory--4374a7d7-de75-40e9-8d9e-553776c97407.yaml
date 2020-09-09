@@ -1,5 +1,5 @@
 fieldLayouts:
-  f6d55880-ad0a-4dfd-8a02-2bfa54229197:
+  cd077675-5f1f-4ae3-a3c8-3b5507286a5a:
     tabs:
       -
         elements:
@@ -23,25 +23,18 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
-            warning: null
-            width: 100
-          -
-            fieldUid: 77965867-bc22-4a9a-9292-4712bfed2994
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
+            type: craft\fieldlayoutelements\TitleField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: subscribersEmail
-hasTitleField: false
-name: 'Subscribers email'
-section: d2d73eda-3c35-430a-ad72-a7a9f3aa80b9
-sortOrder: 2
-titleFormat: email
-titleTranslationKeyFormat: null
-titleTranslationMethod: site
+handle: articlesCategory
+name: 'Articles category'
+siteSettings:
+  0c2d02e9-1d1e-4615-a309-ed793efd7840:
+    hasUrls: true
+    template: null
+    uriFormat: 'articlescat/{slug}'
+structure:
+  maxLevels: null
+  uid: 50a1504f-f889-4c80-b088-35f7a40fd182

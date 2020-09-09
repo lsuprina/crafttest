@@ -1,21 +1,23 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: homepage
+handle: articleCategory
 instructions: ''
-name: Homepage
+name: 'Article category'
 searchable: false
 settings:
+  allowLimit: false
+  allowMultipleSources: false
   allowSelfRelations: false
-  limit: '1'
+  branchLimit: '1'
+  limit: null
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true
-  source: null
-  sources:
-    - 'section:aa69c6d6-6839-434f-9e80-aa3e003ccfd8'
+  source: 'group:4374a7d7-de75-40e9-8d9e-553776c97407'
+  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site
-type: craft\fields\Entries
+type: craft\fields\Categories

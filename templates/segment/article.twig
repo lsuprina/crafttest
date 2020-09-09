@@ -1,5 +1,6 @@
 <!-- Main listing -->
 {% set articles = craft.entries().orderBy('dateCreated desc').section('article').limit(4) %}
+
 {% paginate articles as pageInfo, pageEntries %}
 
 
@@ -14,6 +15,7 @@
 
 
       {% for article in pageEntries %}
+        {% set category = article.articleCategory.one() %}
         <!-- Grid column -->
         <div class="col-md-12">
 
@@ -28,7 +30,7 @@
 
           <!-- Excerpt -->
           <a>
-            <p class="text-center font-weight-bold gold-text mt-4">{{article.category|upper}}</p>
+            <p class="text-center font-weight-bold gold-text mt-4">{{category|upper}}</p>
           </a>
 
           <h2 class="text-center font-weight-bold dark-grey-text pb-3">

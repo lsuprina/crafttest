@@ -19,5 +19,5 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: page\postpage
-    uriFormat: post-page
+    uriFormat: 'post/{slug}'
 type: single

@@ -1,7 +1,7 @@
 {
   "require": {
     "aelvan/mailchimp-subscribe": "3.0.3",
-    "craftcms/cms": "3.5.8",
+    "craftcms/cms": "3.5.9",
     "craftcms/redactor": "2.7.4",
     "focuslabllc/craft-cheat-sheet": "2.0.3",
     "lukeyouell/craft-mailchimplists": "^1.0",

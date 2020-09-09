@@ -1,8 +1,8 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: about
+handle: homepage
 instructions: ''
-name: About
+name: Homepage
 searchable: false
 settings:
   allowSelfRelations: false
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:aa69c6d6-6839-434f-9e80-aa3e003ccfd8'
+    - 'section:e28b7518-65aa-4895-a1ad-22d4bfdd8236'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: baec9db7-83fc-4e15-b797-6eeb2fc67880
+            fieldUid: 62ebbc34-606e-4227-8878-eae8fd3bc104
             instructions: null
             label: null
             required: false
@@ -58,6 +58,24 @@ fieldLayouts:
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f89026c3-1280-4673-aa46-a6089c9880fd
+            instructions: ''
+            label: 'Label for button1'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0bf25ffc-24f2-4784-b9c8-bba770796201
+            instructions: ''
+            label: 'Label for button2'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

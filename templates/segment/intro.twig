@@ -1,6 +1,6 @@
     <!-- Intro Section -->
     {% set intro = craft.entries().section('intro').one() %}
-    {% set entries = craft.entries().section('navbar').one() %}
+    {% set about = craft.entries().section('about') %}
     {% set image = intro.image.one() %}
    
     <div class="view jarallax" data-jarallax='{"speed": 0.2}'
@@ -20,7 +20,7 @@
                   <strong>{{intro.subheading}}</strong>
                 </h5>
                 <a href="#" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">{{intro.button1}}</a>
-                <a href="{{entries.about.one().navigationLink}}" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">{{intro.button2}}</a>
+                <a href="{{about.uri}}" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">{{intro.button2}}</a>
               </div>
             </div>
           </div>
