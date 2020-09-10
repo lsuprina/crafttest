@@ -28,9 +28,9 @@ fieldLayouts:
             width: 100
           -
             fieldUid: dea09149-7401-480f-b50c-9a304d2c9b71
-            instructions: null
-            label: null
-            required: false
+            instructions: ''
+            label: 'Footer links'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

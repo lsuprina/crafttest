@@ -1,0 +1,32 @@
+{% extends "layout" %}
+
+{% block main %}
+
+{% set articles = craft.entries().section('article').all() %}
+{% set date = craft.app.request.lastSegment %}
+
+    {% for article in articles %}
+      {% if date ?? article.postDate|date('FY') %}
+      
+        <!-- Image -->
+        <div class="view overlay z-depth-1">
+          <img src="{{article.image.one().url}}"
+            class="img-fluid" alt="Post">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Post data -->
+        <div class="text-center mt-3">
+          <p class="mb-1 font-weight-bold">
+            <a href="#!" class="text-hover">{{article.heading}}</a>
+          </p>
+          <p class="font-small grey-text">
+            <em>{{article.postDate|date('M d, Y')}}</em>
+          </p>
+        {% else %}
+            <h>NO POSTS IN THIS PERIOD</h>
+      {% endif %}
+    {% endfor %}
+{% endblock %}

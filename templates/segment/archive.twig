@@ -7,6 +7,7 @@
 <hr>
 
 {% set articles = craft.entries().section('article').all() %}       
+{% set archive = craft.entries().section('archive').one() %}
 
 <!-- Archive -->
 <section class="archive mb-5">
@@ -23,7 +24,7 @@
         {% for date, article in articles|group("postDate|date('F Y')") %}
           <li>
             <h6 class="font-weight-normal">
-              <a href="#!" class="dark-grey-text">{{date}}</a>
+              <a href="{{archive.uri}}" target="blank" class="dark-grey-text">{{date}}</a>
             </h6>
           </li>
         {% endfor %}

@@ -1,6 +1,7 @@
   <footer class="page-footer stylish-color-dark text-center text-md-left mt-4 pt-4">
   {% set user = craft.users().group('bloggers').one() %}
-  {% set footerColumns = craft.entries().section('footerSection').all() %}
+  {% set usefulLinks = craft.entries().section('footerSection').one() %}
+  {% set categories = craft.categories().group('articlesCategory').all() %}
 
       <!-- Footer Links -->
       <div class="container">
@@ -18,18 +19,29 @@
           <hr class="w-100 clearfix d-md-none">
 
           <!-- Second column -->
-          {% for footerColumn in footerColumns %}
-            <div class="{{loop.first ? 'col-md-2 col-lg-2 col-xl-2 mx-auto mt-3' : 'col-md-3 col-lg-2 col-xl-2 mx-auto mt-3' }}">
-              <h6 class="text-uppercase mb-4 font-weight-bold">{{footerColumn.title}}</h6>
-              {% for footerLink in footerColumn.footerLinks.all() %}
-                <p>
-                  <a href="{{footerLink.navigationLink}}">{{footerLink.title}}</a>
-                </p>
-              {% endfor %}
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Categories</h6>
+                {% for category in categories %}
+                  <p>
+                    <a href="{{category.uri}}">{{category.title}}</a>
+                  </p>
+                {% endfor %}
+
             </div>
-          {% endfor %}
+          <!-- Second column -->
 
-
+          <!-- Third column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">{{usefulLinks.title}}</h6>
+                {% for usefulLink in usefulLinks %}
+                  {% for link in usefulLink %}
+                    <p>
+                      <a href="{{link.navigationLink}}">{{link.title}}</a>
+                    </p>
+                  {% endfor %}
+                {% endfor %}
+            </div>
+          <!-- Third column -->
             
 
           <hr class="w-100 clearfix d-md-none">

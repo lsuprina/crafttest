@@ -10,8 +10,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: null
-            label: null
+            instructions: ''
+            label: __blank__
             max: null
             min: null
             name: null
@@ -19,12 +19,38 @@ fieldLayouts:
             placeholder: null
             readonly: false
             requirable: false
-            required: false
             size: null
             step: null
             tip: null
             title: null
             type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: c3912c0d-5273-4027-8ea7-74c0ca7ec838
+            instructions: ''
+            label: Name
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5d8b7b7a-2de9-4075-a860-7f4b8b328d85
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c9505970-5427-4d98-920a-eace1edd99de
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
@@ -39,10 +65,10 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 handle: comments
-hasTitleField: true
-name: comments
+hasTitleField: false
+name: Comments
 section: d20cdcac-ad5b-476f-873a-d5dce6699c1c
 sortOrder: 1
-titleFormat: null
+titleFormat: comment
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

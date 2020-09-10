@@ -20,4 +20,4 @@ siteSettings:
     hasUrls: false
     template: null
     uriFormat: null
-type: channel
+type: single
