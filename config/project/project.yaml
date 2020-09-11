@@ -1,4 +1,4 @@
-dateModified: 1599747865
+dateModified: 1599835055
 email:
   fromEmail: lsuprina@foi.hr
   fromName: craft_test
@@ -29,5 +29,6 @@ system:
   edition: pro
   live: true
   name: craft_test
+  retryDuration: null
   schemaVersion: 3.5.13
   timeZone: America/Los_Angeles

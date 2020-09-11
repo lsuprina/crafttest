@@ -1,21 +1,27 @@
-contentColumnType: string
+contentColumnType: text
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
 handle: paragraph
 instructions: ''
 name: Paragraph
 searchable: false
 settings:
-  allowSelfRelations: false
-  limit: ''
-  localizeRelations: false
-  selectionLabel: ''
-  showSiteMenu: true
-  source: null
-  sources:
-    - 'section:9c0738b8-52da-4bf1-8d8d-d9b2bf9c8e53'
-  targetSiteId: null
-  validateRelatedElements: false
-  viewMode: null
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showHtmlButtonForNonAdmins: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
 translationKeyFormat: null
-translationMethod: site
-type: craft\fields\Entries
+translationMethod: none
+type: craft\redactor\Field

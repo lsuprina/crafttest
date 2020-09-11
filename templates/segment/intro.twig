@@ -3,6 +3,8 @@
     {% set about = craft.entries().section('about') %}
     {% set entries = craft.entries().section('navbar').one() %}
     {% set image = intro.image.one() %}
+    {% set categories = craft.categories().group('articlesCategory').all() %}
+    {% set categoryUrl = ''%}
    
     <div class="view jarallax" data-jarallax='{"speed": 0.2}'
       style="background-image: url({{image.url}}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -20,7 +22,10 @@
                 <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s">
                   <strong>{{intro.subheading}}</strong>
                 </h5>
-                <a href="#" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">{{intro.button1}}</a>
+                {% for category in categories if category.title|lower in intro.button1|lower %}
+                    {% set categoryUrl = category.uri %}
+                {% endfor %}
+                <a href="{{categoryUrl}}" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">{{intro.button1}}</a>
                 <a href="{{entries.about.one().navigationLink}}" class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">{{intro.button2}}</a>
               </div>
             </div>

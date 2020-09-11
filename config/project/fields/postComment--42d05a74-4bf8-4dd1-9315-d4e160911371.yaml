@@ -1,18 +1,18 @@
 contentColumnType: string
 fieldGroup: 02935152-90f1-4de0-b483-3eebcce502e7
-handle: comment
+handle: postComment
 instructions: ''
-name: Comment
+name: postComment
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  limit: '1'
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true
   source: null
   sources:
-    - 'section:d20cdcac-ad5b-476f-873a-d5dce6699c1c'
+    - 'section:e01fc440-60ea-44b9-8f84-72da8ffe8ce3'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

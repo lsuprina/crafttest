@@ -3,6 +3,7 @@
 {% block main %}
     {% set post = craft.entries().section('post').one() %}
     {% set user = craft.users().group('bloggers').one() %}
+    {% set comments = craft.entries().section('comments').typeId('postComment').all() %}
 
     <main>
       <section>
@@ -11,412 +12,282 @@
         </div>
       </section>
 
-        <!-- Main Layout -->
-        
-
-        {% macro errorList(errors) %}
-          {% if errors %}
-            <ul class="errors">
-              {% for error in errors %}
-                <li>{{ error }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endmacro %}
-
-          <div class="container-fluid mt-md-0 mt-5 mb-5">
-
-            <!-- Grid row -->
-            <div class="row" style="margin-top: -100px;">
-
-              <!-- Grid column -->
-              <div class="col-md-12 px-lg-5">
-                <!-- Card -->
-                <div class="card pb-5 mx-md-3">
-                  <div class="card-body">
-
-                    <div class="container">
-
-                      <!-- Section heading -->
-                      <h1 class="text-center h1 pt-4 mb-3">
-                        <strong>{{post.title}}</strong>
-                      </h1>
-
-                      <div class="row">
-                        <div class="col-md-12 col-xl-12 d-flex justify-content-center">
-                          <p class="font-small dark-grey-text mb-1">
-                            <strong>Author:</strong>{{user.firstName}} {{user.lastName}}</p>
-                          <p class="font-small grey-text mb-0 ml-3">
-                            <i class="far fa-clock-o dark-grey-text"></i>{{post.postDate|date('d/m/Y \\a\\t H:i a')}}</p>
-                        </div>
-                      </div>
-
-                      <!-- Grid row -->
-                      <div class="row row pt-lg-5 pt-3">
-
-                        <!-- Grid column -->
-                        <div class="col-md-12 col-xl-12">
-                          
-                          
-                            <!-- Grid row -->
-                            <div class="row mt-3">
-
-                              <p class="dark-grey-text article">{{post.description}}</p>
-
-                              <h4 class="font-weight-bold mt-3 mb-4">
-                                <strong>{{post.heading}}</strong>
-                              </h4>
-
-                              <p class="dark-grey-text article">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                                enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                                nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                                amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-
-                              <blockquote class="blockquote">
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                                  erat a ante.</p>
-                                <footer class="blockquote-footer">Someone famous in
-                                  <cite title="Source Title">Source Title</cite>
-                                </footer>
-                              </blockquote>
-
-                              <p class="dark-grey-text article"> Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                                corporis suscipit
-                                laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel
-                                eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                                consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-                            </div>
-                            <!-- Grid row -->
-
-                            <!-- Grid row -->
-                            <div class="row">
-
-                              <!-- Grid column -->
-                              <div class="col-md-12 d-flex justify-content-center mb-5">
-
-                                <button type="button" class="btn btn-outline-black waves-effect filter"
-                                  data-rel="all">All</button>
-                                <button type="button" class="btn btn-outline-black waves-effect filter"
-                                  data-rel="1">{{post.button1}}</button>
-                                <button type="button" class="btn btn-outline-black waves-effect filter"
-                                  data-rel="2">{{post.button2}}</button>
-
-                              </div>
-                              <!-- Grid column -->
-
-                            </div>
-                            <!-- Grid row -->
-
-                            <!-- Grid row -->
-                            <div class="gallery" id="gallery">
-
-                              {% for image in post.image.all() %}
-                              
-                                <!-- Grid column -->
-                                  <div class="mb-3 pics animation all {% if post.button1|lower in image.url|lower %}{{1}}{% elseif post.button2|lower in image.url|lower  %}{{2}}{% endif %}">
-                                    <img class="img-fluid rounded"
-                                      src="{{image.url}}"
-                                      alt="Card image cap">
-                                    </div>
-                                <!-- Grid column -->
-                              
-                              {% endfor %}
-
-                            </div>
-                            <!-- Grid row -->
-
-
-                            <!-- Grid row -->
-                            <div class="row mb-2 mt-4">
-                              <p class="dark-grey-text article">Perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                                et quasi architecto beatae vitae dicta sunt explicabo. Ut enim ad minima
-                                veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                                nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-                                qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-                                illum qui dolorem eum fugiat quo voluptas nulla.</p>
-
-                              <li class="dark-grey-text article list-unstyled">
-                                <strong>Nulla volutpat aliquam velit:</strong>
-                                <ul>
-                                  <li>Phasellus iaculis neque</li>
-                                  <li>Purus sodales ultricies</li>
-                                  <li>Vestibulum laoreet porttitor sem</li>
-                                  <li>Ac tristique libero volutpat at</li>
-                                  <li>Vestibulum laoreet porttitor sem</li>
-                                </ul>
-                              </li>
-
-                              <p class="dark-grey-text article">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                                enim ipsam voluptatem quia voluptas sit aspernatur ut perspiciatis unde
-                                omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                                quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                                quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                                magnam aliquam quaerat voluptatem.
-                            </div>
-                            <!-- Grid row -->
-
-                            <!-- Grid row -->
-                            <div class="row my-5">
-
-                              <!-- Grid column -->
-                              <div class="col-md-12 text-center">
-
-                                <h4 class="text-center font-weight-bold dark-grey-text mt-3 mb-3">
-                                  <strong>Share this post: </strong>
-                                </h4>
-
-                                <a type="button" class="btn btn-fb btn-sm" href="https://hr-hr.facebook.com/" target="_blank">
-                                  <i class="fab fa-facebook-f left"></i> Facebook</a>
-                                <!-- Twitter -->
-                                <a type="button" class="btn btn-tw btn-sm" href="https://twitter.com/" target="_blank">
-                                  <i class="fab fa-twitter left"></i> Twitter</a>
-                                <!-- Google + -->
-                                <a type="button" class="btn btn-gplus btn-sm" href="https://myaccount.google.com/intro/profile" target="_blank">
-                                  <i class="fab fa-google-plus-g left"></i> Google +</a>
-
-                              </div>
-                              <!-- Grid column -->
-
-                            </div>
-                            <!-- Grid row -->
-
-                            <hr class="mt-5">
-
-                            <!-- Comments -->
-                            <section>
-
-                              <!-- Main wrapper -->
-                              <div class="comments-list text-center text-md-left">
-                                <div class="text-center my-5">
-                                  <h3 class="font-weight-bold">Comments
-                                    <span class="badge indigo">3</span>
-                                  </h3>
-                                </div>
-                                <!-- First row -->
-                                <div class="row mb-5">
-                                  <!-- Image column -->
-                                  <div class="col-sm-2 col-12 mb-3">
-                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (8).jpg"
-                                      class="avatar rounded-circle z-depth-1-half" alt="sample image">
-                                  </div>
-                                  <!-- Image column -->
-
-                                  <!-- Content column -->
-                                  <div class="col-sm-10 col-12">
-                                    <a>
-                                      <h5 class="user-name font-weight-bold">John Doe</h5>
-                                    </a>
-                                    <div class="card-data">
-                                      <ul class="list-unstyled">
-                                        <li class="comment-date font-small">
-                                          <i class="far fa-clock-o"></i> 05/10/2015</li>
-                                      </ul>
-                                    </div>
-                                    <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation
-                                      ullamco laboris nisi ut aliquip ex
-                                      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-                                    </p>
-                                  </div>
-                                  <!-- Content column -->
-                                </div>
-                                <!-- First row -->
-
-                                <!-- Second row -->
-                                <div class="row mb-5">
-                                  <!-- Image column -->
-                                  <div class="col-sm-2 col-12 mb-3">
-                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (30).jpg"
-                                      class="avatar rounded-circle z-depth-1-half" alt="sample image">
-                                  </div>
-                                  <!-- Image column -->
-
-                                  <!-- Content column -->
-                                  <div class="col-sm-10 col-12">
-                                    <a>
-                                      <h5 class="user-name font-weight-bold">Lily Brown</h5>
-                                    </a>
-                                    <div class="card-data">
-                                      <ul class="list-unstyled">
-                                        <li class="comment-date font-small">
-                                          <i class="far fa-clock-o"></i> 05/10/2015</li>
-                                      </ul>
-                                    </div>
-                                    <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation
-                                      ullamco laboris nisi ut aliquip ex
-                                      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-                                    </p>
-                                  </div>
-                                  <!-- Content column -->
-                                </div>
-                                <!-- Second row -->
-
-                                <!-- Third row -->
-                                <div class="row mb-5">
-                                  <!-- Image column -->
-                                  <div class="col-sm-2 col-12 mb-3">
-                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img (28).jpg"
-                                      class="avatar rounded-circle z-depth-1-half" alt="sample image">
-                                  </div>
-                                  <!-- Image column -->
-                                  <!-- Content column -->
-                                  <div class="col-sm-10 col-12">
-                                    <a>
-                                      <h5 class="user-name font-weight-bold">Martha Smith</h5>
-                                    </a>
-                                    <div class="card-data">
-                                      <ul class="list-unstyled">
-                                        <li class="comment-date font-small">
-                                          <i class="far fa-clock-o"></i> 05/10/2015</li>
-                                      </ul>
-                                    </div>
-                                    <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation
-                                      ullamco laboris nisi ut aliquip ex
-                                      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-                                    </p>
-                                  </div>
-                                  <!-- Content column -->
-                                </div>
-                                <!-- Third row -->
-                              </div>
-                              <!-- Main wrapper -->
-
-                            </section>
-                            <!-- Comments -->
-                            <hr>
-
-                        <form method="post">
-
-                          {{ csrfInput() }}
-                          {{ actionInput('entries/save-entry') }}
-                          {{ redirectInput('') }}
-                          {{ hiddenInput('sectionId', '14') }}
-                          {{ hiddenInput('enabled', '1') }}
-
-                        {% set entry = entry ?? create('craft\\entries\\Comments') %}
-
-                          <!-- Section: Leave a reply (Not Logged In User) -->
-                        <section class="mb-4 wow fadeIn" data-wow-delay="0.2s">
-                          <h3 class="font-weight-bold text-center my-5">Leave a reply</h3>
-
-                          <!-- Grid row -->
-                          <div class="row">
-
-                            <!-- Grid column -->
-                            <div class="col-lg-4 col-md-12 mb-4">
-
-                              <div class="input-group md-form form-sm form-3 pl-0">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text white black-text" id="basic-addon8">1</span>
-                                </div>
-                                <label for="heading">Title</label>
-                                {{ input('text', '', entry.heading, {
-                                  id: 'heading',
-                                  class: entry.hasErrors('title') ? 'error',
-                                }) }}
-                                {{ _self.errorList(entry.getErrors('title')) }}
-
-                                <input type="text" class="form-control mt-0 black-border rgba-white-strong"
-                                  placeholder="Name" aria-describedby="basic-addon9">
-                              </div>
-
-                            </div>
-                            <!-- Grid column -->
-
-                            <!-- Grid column -->
-                            <div class="col-lg-4 col-md-6 mb-4">
-
-                              <div class="input-group md-form form-sm form-3 pl-0">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text white black-text" id="basic-addon9">2</span>
-                                </div>
-                                <input type="text" class="form-control mt-0 black-border rgba-white-strong"
-                                  placeholder="Email" aria-describedby="basic-addon9">
-                              </div>
-
-                            </div>
-                            <!-- Grid column -->
-
-                            <!-- Grid column -->
-                            <div class="col-lg-4 col-md-6 mb-4">
-
-                              <div class="input-group md-form form-sm form-3 pl-0">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text white black-text" id="basic-addon10">3</span>
-                                </div>
-                                <input type="text" class="form-control mt-0 black-border rgba-white-strong"
-                                  placeholder="Website" aria-describedby="basic-addon9">
-                              </div>
-
-                            </div>
-                            <!-- Grid column -->
-
-                          </div>
-                          <!-- Grid row -->
-
-                          <!-- Grid row -->
-                          <div class="row">
-
-                            <div class="col-12 mt-1">
-                              <div class="form-group basic-textarea rounded-corners shadow-textarea">
-
-                                <textarea class="form-control" id="exampleFormControlTextarea6" rows="5"
-                                  placeholder="Write something here..."></textarea>
-                              </div>
-
-                              <div class="text-right">
-                                <button class="btn btn-grey btn-sm">Submit</button>
-                              </div>
-
-                            </div>
-
-                          </div>
-                          <!-- Grid row -->
-
-                        </section>
-                        <!-- Section: Leave a reply (Not Logged In User) -->
-                      </form>
-
-                        </div>
-                        <!-- Grid column -->
-
-                      </div>
-                      <!-- Grid row -->
+      <!-- Main Layout -->
+
+      {% macro errorList(errors) %}
+        {% if errors %}
+          <ul class="errors">
+            {% for error in errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endmacro %}
+
+  <div class="container-fluid mt-md-0 mt-5 mb-5">
+
+    <!-- Grid row -->
+    <div class="row" style="margin-top: -100px;">
+
+      <!-- Grid column -->
+      <div class="col-md-12 px-lg-5">
+        <!-- Card -->
+        <div class="card pb-5 mx-md-3">
+          <div class="card-body">
+
+            <div class="container">
+
+              <!-- Section heading -->
+              <h1 class="text-center h1 pt-4 mb-3">
+                <strong>{{post.title}}</strong>
+              </h1>
+
+              <div class="row">
+                <div class="col-md-12 col-xl-12 d-flex justify-content-center">
+                  <p class="font-small dark-grey-text mb-1">
+                    <strong>Author:</strong>{{user.firstName}} {{user.lastName}}</p>
+                  <p class="font-small grey-text mb-0 ml-3">
+                    <i class="far fa-clock-o dark-grey-text"></i>{{post.postDate|date('d/m/Y \\a\\t H:i a')}}</p>
+                </div>
+              </div>
+
+              <!-- Grid row -->
+              <div class="row row pt-lg-5 pt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-12 col-xl-12">
+                  
+                  
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+
+                      <p class="dark-grey-text article">{{post.description}}</p>
+
+                      <h4 class="font-weight-bold mt-3 mb-4">
+                        <strong>{{post.heading}}</strong>
+                      </h4>
+
+                      {{post.text}}
 
                     </div>
-                    <!-- Grid column -->
+                    <!-- Grid row -->
 
-                  </div>
-                  <!-- Grid row -->
+                    <!-- Grid row -->
+                    <div class="row">
 
+                      <!-- Grid column -->
+                      <div class="col-md-12 d-flex justify-content-center mb-5">
+
+                        <button type="button" class="btn btn-outline-black waves-effect filter"
+                          data-rel="all">All</button>
+                        <button type="button" class="btn btn-outline-black waves-effect filter"
+                          data-rel="1">{{post.button1}}</button>
+                        <button type="button" class="btn btn-outline-black waves-effect filter"
+                          data-rel="2">{{post.button2}}</button>
+
+                      </div>
+                      <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="gallery" id="gallery">
+
+                      {% for image in post.image.all() %}
+                      
+                        <!-- Grid column -->
+                          <div class="mb-3 pics animation all {% if post.button1|lower in image.url|lower %}{{1}}{% elseif post.button2|lower in image.url|lower  %}{{2}}{% endif %}">
+                            <img class="img-fluid rounded"
+                              src="{{image.url}}"
+                              alt="Card image cap">
+                            </div>
+                        <!-- Grid column -->
+                      
+                      {% endfor %}
+
+                    </div>
+                    <!-- Grid row -->
+
+
+                    <!-- Grid row -->
+                    <div class="row mb-2 mt-4">
+                      {{post.paragraph}}
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row my-5">
+
+                      <!-- Grid column -->
+                      <div class="col-md-12 text-center">
+
+                        <h4 class="text-center font-weight-bold dark-grey-text mt-3 mb-3">
+                          <strong>Share this post: </strong>
+                        </h4>
+
+                        <a type="button" class="btn btn-fb btn-sm" href="https://hr-hr.facebook.com/" target="_blank">
+                          <i class="fab fa-facebook-f left"></i> Facebook</a>
+                        <!-- Twitter -->
+                        <a type="button" class="btn btn-tw btn-sm" href="https://twitter.com/" target="_blank">
+                          <i class="fab fa-twitter left"></i> Twitter</a>
+                        <!-- Google + -->
+                        <a type="button" class="btn btn-gplus btn-sm" href="https://myaccount.google.com/intro/profile" target="_blank">
+                          <i class="fab fa-google-plus-g left"></i> Google +</a>
+
+                      </div>
+                      <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                    <hr class="mt-5">
+                    
+      <!-- Comments -->
+      <section>
+      {% set count = craft.entries().section('comments').count() %}
+        <!-- Main wrapper -->
+        <div class="comments-list text-center text-md-left">
+        <div class="text-center my-5">
+            <h3 class="font-weight-bold">Comments
+            <span class="badge indigo">{{count}}</span>
+            </h3>
+        </div>
+
+        {% for comment in comments %}
+            <!-- First row -->
+                <div class="row mb-5">
+                    <!-- Image column -->
+                    <div class="col-sm-2 col-12 mb-3">
+                      <img src="http://craft.test/assets/images/users.jpg"
+                          class="avatar rounded-circle z-depth-1-half" alt="user image">
+                    </div>
+                    <!-- Image column -->
+
+                    <!-- Content column -->
+                    <div class="col-sm-10 col-12">
+                    <a>
+                        <h5 class="user-name font-weight-bold">{{comment.commentName}}</h5>
+                    </a>
+                    <div class="card-data">
+                      <ul class="list-unstyled">
+                        <li class="comment-date font-small">
+                            <i class="far fa-clock-o"></i> {{comment.postDate|date('d/m/Y')}}</li>
+                      </ul>
+                    </div>
+                      <p class="dark-grey-text article">{{comment.text}}
+                      </p>
+                    </div>
+                    <!-- Content column -->
                 </div>
-                <!-- Card -->
-              </div>
-              <!-- Grid column -->
+            <!-- First row -->
+        {% endfor %}
+    
+        </div>
+        <!-- Main wrapper -->
+
+      </section>
+      <!-- Comments -->
+      <hr>
+    
+    <!-- Section: Leave a reply (Not Logged In User) -->
+    <form method="post">
+
+        {{ csrfInput() }}
+        {{ actionInput('entries/save-entry') }}
+        {{ redirectInput(post.url) }}
+        {{ hiddenInput('sectionId', '14') }}
+        {{ hiddenInput('enabled', '1') }}
+        {{ hiddenInput('fields[postComment][]', post.id) }}
+
+        <!-- Section: Leave a reply (Not Logged In User) -->
+        <section class="mb-4 wow fadeIn" data-wow-delay="0.2s">
+            <h3 class="font-weight-bold text-center my-5">Leave a reply</h3>
+
+            <!-- Grid row -->
+            <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="input-group md-form form-sm form-3 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text white black-text" id="basic-addon8">1</span>
+                </div>
+
+                <input type="text" class="form-control mt-0 black-border rgba-white-strong" name="fields[commentName]"
+                    placeholder="Name" aria-describedby="basic-addon9">
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="input-group md-form form-sm form-3 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text white black-text" id="basic-addon9">2</span>
+                </div>
+
+                <input type="email" class="form-control mt-0 black-border rgba-white-strong" name="fields[email]"
+                    placeholder="Email" aria-describedby="basic-addon9">
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="input-group md-form form-sm form-3 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text white black-text" id="basic-addon10">3</span>
+                </div>
+
+                <input type="url" class="form-control mt-0 black-border rgba-white-strong" name="fields[website]"
+                    placeholder="Website" aria-describedby="basic-addon9">
+                </div>
+
+            </div>
+            <!-- Grid column -->
 
             </div>
             <!-- Grid row -->
 
+            <!-- Grid row -->
+            <div class="row">
+
+            <div class="col-12 mt-1">
+                <div class="form-group basic-textarea rounded-corners shadow-textarea">
+
+                <textarea class="form-control" id="exampleFormControlTextarea6" rows="5" name="fields[text]"
+                    placeholder="Write something here..."></textarea>
+                </div>
+
+                <div class="text-right">
+                <button type="submit" class="btn btn-grey btn-sm">Submit</button>
+                </div>
+
+            </div>
+
+            </div>
+            <!-- Grid row -->
+
+        </section>
+        <!-- Section: Leave a reply (Not Logged In User) -->
+    </form>
+
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+            <!-- Grid column -->
           </div>
-
-    </main>
-    <!-- Main Layout -->
-
+          <!-- Grid row -->
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+  </main>
+  <!-- Main Layout -->
 {% endblock %}

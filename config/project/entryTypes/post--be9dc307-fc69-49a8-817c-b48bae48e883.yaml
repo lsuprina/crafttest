@@ -54,10 +54,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a7b6758c-e09b-4ee0-b504-e88ee01e64ea
-            instructions: null
-            label: null
-            required: false
+            fieldUid: cc8f74bc-5010-4b72-8473-e5a1b33a207e
+            instructions: ''
+            label: 'First paragraph'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -90,10 +90,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 42d05a74-4bf8-4dd1-9315-d4e160911371
-            instructions: null
-            label: null
-            required: false
+            fieldUid: a7b6758c-e09b-4ee0-b504-e88ee01e64ea
+            instructions: ''
+            label: 'Second paragraph'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

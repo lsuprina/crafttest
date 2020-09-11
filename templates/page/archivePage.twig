@@ -3,8 +3,13 @@
 {% block main %}
 
 {% set articles = craft.entries().section('article').all() %}
-{% set date = craft.app.request.lastSegment %}
+{% set date = craft.request.lastSegment %}
 
+<section class="mx-auto" style="width: 60%;">
+  <!-- Grid row -->
+  <div class="row mt-4" style="padding-top: 10%">
+    <!-- Grid column -->
+    <div class="col-md-6 col-lg-12">
     {% for article in articles %}
       {% if date ?? article.postDate|date('FY') %}
       
@@ -25,8 +30,9 @@
           <p class="font-small grey-text">
             <em>{{article.postDate|date('M d, Y')}}</em>
           </p>
-        {% else %}
-            <h>NO POSTS IN THIS PERIOD</h>
       {% endif %}
     {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}
